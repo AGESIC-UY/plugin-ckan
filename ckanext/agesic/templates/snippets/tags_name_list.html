@@ -1,0 +1,13 @@
+{% set max_elements=5 %}
+{% if tags %}
+    {% for tag in tags %}
+        {% if loop.index < max_elements %}
+            <a href="{% url_for 'dataset.search', tags=tag.name %}">{{ tag.name }}</a>
+        {% endif %}
+        {% if loop.index < tags|length and loop.index < max_elements - 1 %}
+            ,
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {{ _('There are no tags associated with this dataset') }}
+{% endif %}

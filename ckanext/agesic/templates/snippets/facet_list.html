@@ -1,0 +1,47 @@
+{% ckan_extends %}
+
+      {% block facet_list_item %}
+        <div class="Page-nav">
+          {% block facet_list_heading %}
+            {% set title = title or h.get_facet_title(name) %}
+          <a class="Page-navTitle" role="button" data-toggle="collapse" href="#collapse{{ title }}" aria-expanded="true" aria-controls="collapse{{ title }}">
+            {{ title }}
+            <span class="u-right caret"></span>
+          </a>
+          {% endblock %}
+          {% block facet_list_items %}
+            {% with items = items or h.get_facet_items_dict(name) %}
+            {% if items %}
+              <div class="collapse in" role="region" id="collapse{{ title }}" aria-expanded="true">
+                <ul class="Page-navFilters">
+                  {% for item in items %}
+                    {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
+                    {% set label = label_function(item) if label_function else item.display_name %}
+                    {% set label_truncated = h.truncate(label, 22) if not label_function else label %}
+                    {% set count = count_label(item['count']) if count_label else ('%d' % item['count']) %}
+                      <li class="{% if item.active %} is-selected{% endif %}">
+                        <a href="{{ href }}" title="{{ label if label != label_truncated else '' }}">
+                            {{ _(label_truncated) }}
+                          <span class="Tags-item">{{ count }}</span>
+                        </a>
+                      </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <p class="module-footer">
+                {% if h.get_param_int('_%s_limit' % name) %}
+                  {% if h.has_more_facets(name, search_facets or c.search_facets) %}
+                    <a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a>
+                  {% endif %}
+                {% else %}
+                  <a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular {facet_type}').format(facet_type=title) }}</a>
+                {% endif %}
+              </p>
+            {% else %}
+              <p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
+            {% endif %}
+            {% endwith %}
+          {% endblock %}
+        </div>
+      {% endblock %}

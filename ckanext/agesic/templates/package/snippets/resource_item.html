@@ -1,0 +1,50 @@
+{% ckan_extends %}
+
+<li class="resource-item" data-id="{{ res.id }}">
+    <div class="Media-body">
+        {% block resource_item_title %}
+        <div class="Download">
+            <div class="Media">
+                <div class="Media-image">
+                      <span class="File-icon">
+                        <span class="File-icon Icon--{{ res.format.lower() or 'data' }}" property="dc:format"
+                              data-format="{{ res.format.lower() or 'data' }}"></span></span>
+                </div>
+                <div class="Media-body">
+                    <a class="Download-title" href="{{ url }}" title="{{ res.name or res.description }}">
+                        {{ h.resource_display_name(res) | truncate(50) }}
+                        {{ h.popular('views', res.tracking_summary.total, min=10) if res.tracking_summary }}
+                    </a>
+                    {% endblock %}
+                    {% block resource_item_description %}
+                    <div class="Download-description">
+                        {% if res.description %}
+                        {{ h.render_markdown(h.get_translated(res, 'description') | truncate(800)) }}
+                        {% endif %}
+                    </div>
+                    {% endblock %}
+                    {% block resource_item_explore %}
+                    {% if not url_is_edit %}
+                    {% if res.url and h.is_url(res.url) %}
+                    <a href="{{ res.url }}" class="Button Button--primary Button--small u-mb1 u-mr2 no-link-hover resource-url-analytics resource-type-{{ res.resource_type }}"
+                       download>
+                        {% if res.url_type == 'upload' and res.update_frequency != '0' %}
+                        <i class="fa fa-arrow-circle-o-down"></i>
+                        {{ _('Download') }}<span class="cache"></span>
+                        {% else %}
+                        <i class="fa fa-external-link"></i>
+                        {{ _('Go to resource') }}
+                        {% endif %}
+                    </a>
+                    <span id="{{ res.id }}" class="Status-main Status"></span>
+                        <span class="hidden_element" id="form_ext_a">{{ res.format.lower() }}</span>
+                    {% endif %}
+                    {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+

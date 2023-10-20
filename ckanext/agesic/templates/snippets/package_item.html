@@ -1,0 +1,68 @@
+{% ckan_extends %}
+
+{% block content %}
+    <div class="Media-image">
+{#         TODO: review?#}
+        {% if show_package_organization %}
+            {% if package.organization is defined %}
+                {# Extra organization name for home page plugin most-x blocks #}
+                <ul class="dataset-resources">
+                    <li>{{ package.organization.title }}</li>
+                </ul>
+            {% endif %}
+        {% elif package.organization is defined %}
+                {% if package.organization.image_url %}
+                    <img class="images-item" src="{% if package.organization.image_url[:4] != 'http' %}/uploads/group/{% endif %}{{ package.organization.image_url }}"
+                         alt="{{ package.organization.title }}">
+                {% endif %}
+                <br/>
+        {% endif %}
+    </div>
+    <div class="Media-body">
+      <div class="dataset-content">
+        {% block heading %}
+        <h3 class="dataset-heading">
+            {% block heading_private %}
+            {% if package.private %}
+            <span class="dataset-private label label-inverse">
+                    <i class="fa fa-lock"></i>
+                    {{ _('Private') }}
+                </span>
+            {% endif %}
+            {% endblock %}
+            {% block heading_title %}
+            {{ h.link_to(h.truncate(title, truncate_title), h.url_for('%s.read' % package.type, id=package.name)) }}
+            {% endblock %}
+            {% block heading_meta %}
+            {% if package.get('state', '').startswith('draft') %}
+            <span class="label label-info">{{ _('Draft') }}</span>
+            {% elif package.get('state', '').startswith('deleted') %}
+            <span class="label label-danger">{{ _('Deleted') }}</span>
+            {% endif %}
+            {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
+            {% endblock %}
+        </h3>
+        {% endblock %}
+        {% block banner %}
+          {{ super() }}
+        {% endblock %}
+        {% block notes %}
+          {{ super() }}
+        {% endblock %}
+         {% block resources %}
+            <div class="Tags u-mb1">
+                {% block resources_inner %}
+                {% for resource in h.dict_list_reduce(package.resources, 'format') %}
+                    <a href="{{ h.url_for(package.type ~ '.read', id=package.name) }}" class="Tags-item Tags-item--{{ resource.lower() }}" data-format="{{ resource.lower() }}">{{ resource }}</a>
+            {% endfor %}
+            {% endblock %}
+            {% endblock %}
+        </div>
+        <p><strong>{{ _("Last updated") }}:</strong> {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=package.metadata_modified %}</p>
+        <p><strong>{{ _("Organization") }}:</strong> <a href="{{ h.url_for('organization.read', id=package.organization.name) }}">
+            {{ package.organization.title or package.organization.name }}</a>
+        <p><strong>{{ _("Groups") }}:</strong> {% snippet 'snippets/groups_name_list.html', groups=package.groups %}</p>
+        <p><strong>{{ _("Tags") }}:</strong> {% snippet 'snippets/tags_name_list.html', tags=package.tags %}</p>
+    </div>
+</div>
+{% endblock %}

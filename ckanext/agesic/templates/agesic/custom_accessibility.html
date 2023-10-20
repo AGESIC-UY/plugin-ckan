@@ -1,0 +1,51 @@
+{% extends "page.html" %}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Declaración de accesibilidad') }}</h2>
+{% endblock %}
+
+{% block primary %}
+  <div>
+    <div style="margin:50px;">
+      <h2 class="title_accesibility">Declaración de conformidad de accesibilidad del Catálogo Nacional de <br> Datos Abiertos</h2>
+      <p>
+        Agesic está comprometido con el cumplimiento de la accesibilidad digital para las personas en situación de discapacidad,
+        cumpliendo con la normativa uruguaya correspondiente, <a href="https://www.impo.com.uy/bases/leyes/19924-2020/88"> Artículo 88 de la Ley de Presupuesto
+        Nacional </a> y el <a href="https://www.impo.com.uy/bases/decretos-originales/406-2022"> Decreto 406/022</a>.
+      </p>
+      <h3>Situación de cumplimiento</h3>
+      <p>
+        Esta solución tecnológica está desarrollada considerando los requisitos técnicos definidos en el <a href="https://www.impo.com.uy/bases/decretos-originales/406-2022"> Decreto 406/022 </a> que corresponden a las <a href="https://www.w3.org/WAI/standards-guidelines/#wcag2">pautas de accesibilidad WCAG 2.1 de la W3C,</a> detallados a continuación:
+      </p>
+      <ol>
+        <li>Criterios de conformidad de nivel A y AA.</li>
+        <li>Criterios de conformidad del nivel AAA según detalle:
+          <ul class="list_black">
+            <li>Contraste aumentado - criterio 1.4.6.</li>
+            <li>Presentación visual - criterio 1.4.8.</li>
+            <li>Límites de tiempo - criterio 2.2.6.</li>
+            <li>Ubicación - criterio 2.4.8.</li>
+            <li>Encabezados de sección - criterio 2.4.10.</li>
+            <li>Tamaño del área de interacción - criterio 2.5.5.</li>
+            <li>Cambio a petición - criterio 3.2.5.</li>
+          </ul>
+        </li>
+      </ol>
+      <p>
+        El cumplimiento de los requisitos es parcial debido a que existen páginas o contenidos que no cumplen totalmente.
+      </p>
+      <h3>Fecha de actualización</h3>
+      <p>
+        La presente declaración fue preparada el 03 de mayo de 2023.
+      </p>
+      <p>
+        Agesic se compromete a actualizar esta declaración y hacer una revisión completa de accesibilidad de su sitio web cada 6 meses.
+      </p>
+
+      <h3>Contacto</h3>
+      <p>
+        Agradecemos comentarios sobre la accesibilidad de nuestro producto. Háganos saber si encontró barreras de accesibilidad a través del correo electrónico <a href="mailto:datosabiertos@agesic.gub.uy">datosabiertos@agesic.gub.uy</a>.
+      </p>
+    </div>
+  </div>
+{% endblock %}

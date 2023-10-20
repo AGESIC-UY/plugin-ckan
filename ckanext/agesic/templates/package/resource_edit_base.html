@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block content_action %}
+    {% link_for _('All resources'), named_route=pkg.type ~ '.resources', id=pkg.name, class_='Button Button--primary', icon='arrow-left' %}
+    {% if res %}
+        {% link_for _('View resource'), named_route=pkg.type ~ '_resource.read', id=pkg.name, resource_id=res.id, class_='Button Button--primary', icon='eye' %}
+        {% link_for _('Views'), named_route=pkg.type ~ '_resource.views', id=pkg.name, resource_id=res.id, class_='Button Button--primary', icon='reorder' %}
+    {% endif %}
+{% endblock %}

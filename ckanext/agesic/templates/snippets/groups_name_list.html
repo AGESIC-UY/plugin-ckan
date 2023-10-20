@@ -1,0 +1,13 @@
+{% set max_elements=5 %}
+{% if groups %}
+    {% for group in groups %}
+        {% if loop.index < max_elements %}
+            <a href="{{ url_for('group.read', id=group.name) }}">{{ group.title or group.name }}</a>
+        {% endif %}
+        {% if loop.index < groups|length and loop.index < max_elements - 1 %}
+            ,
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {{ _('There are no groups associated with this dataset') }}
+{% endif %}

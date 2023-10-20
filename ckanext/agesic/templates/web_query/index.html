@@ -1,0 +1,29 @@
+{% extends "page.html" %}
+
+{% block breadcrumb_content %}
+  <li class="active"><a href="">{{ _('Admin') }}</a></li>
+{% endblock %}
+
+{% block primary_content %}
+  <form method='POST' id="web-query-form" action="{{ h.url_for('agesic_web_query_blueprint.query') }}">
+    {% block form %}
+      <section class="input">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page">
+              <h4>Input</h4>
+            </a>
+          </li>
+        </ul>
+        <div>
+          <textarea id="code" name="code" style="width: 100%; height: 100px"></textarea>
+        </div>
+      </section>
+      <p class="form-actions">
+        <button class="btn btn-primary" type="submit" name="action" value="{{ ent_type }}">{{ _('Execute') }}</button>
+      </p>
+      <br/>
+{#      TODO: OUTPUT IN TABLE    #}
+    {% endblock %}
+  </form>
+{% endblock %}

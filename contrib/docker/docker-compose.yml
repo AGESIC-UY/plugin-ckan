@@ -1,0 +1,75 @@
+version: "3"
+
+volumes:
+  ckan_config:
+  ckan_home:
+  ckan_storage:
+  pg_data:
+  solr_data:
+
+services:
+
+  ckan:
+    container_name: ckan
+    restart: unless-stopped
+    build:
+      context: ../../../
+      dockerfile: ckanext-agesic/contrib/docker/Dockerfile
+    env_file:
+      - .env
+    links:
+      - solr
+      - redis
+      - datapusher
+    depends_on:
+      - solr
+    ports:
+      - "0.0.0.0:5000:5000"
+    volumes:
+      - ./scripts/start_ckan.sh:/usr/lib/ckan/default/src/ckanext-agesic/contrib/docker/scripts/start_ckan.sh
+      - /var/lib/ckan:/var/lib/ckan
+
+  datapusher:
+    container_name: datapusher
+    build:
+      context: ../../../../../datapusher/src/datapusher
+      dockerfile: Dockerfile
+    ports:
+      - "8800:8800"
+    environment:
+      - LC_ALL=C
+      - SSL_VERIFY=0
+
+  solr:
+    container_name: solr
+    restart: unless-stopped
+    build:
+      context: ../../
+      dockerfile: contrib/docker/config/solr/Dockerfile
+    ports:
+      - "8983:8983"
+    volumes:
+      - solr_data:/opt/solr/server/solr/ckan/data
+
+  redis:
+    container_name: redis
+    image: redis:alpine3.13
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  ckan-postgresql:
+    container_name: ckan-postgresql
+    image: postgres:9.6
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=ckan_prod
+      - POSTGRES_USER=ckan_prod
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - DATASTORE_POSTGRES_READONLY_PASSWORD=${PG_DATASTORE_RO_PASS}
+    volumes:
+    - ./config/postgres/20_init-user-db.sh:/docker-entrypoint-initdb.d/20_init-user-db.sh
+    - ./config/postgres/40_datastore_permission.sql:/docker-entrypoint-initdb.d/40_datastore_permission.sql
+    - ./data/pg_data/:/var/lib/postgresql/data/

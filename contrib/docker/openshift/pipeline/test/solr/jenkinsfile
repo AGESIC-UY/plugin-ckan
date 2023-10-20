@@ -1,0 +1,17 @@
+node {
+             
+    def imageStreamNameFrom = "ckan-dev/ckan-solr:DEV"
+
+   	echo "version a deployar ... ${imageStreamNameFrom}"
+   	echo "version a deployar desde ... ckan-dev"
+    
+    stage ('Promote to test') {
+          sh "oc tag ${imageStreamNameFrom} ckan-test/ckan-solr:BETA"
+    }
+
+  }
+  def version() {
+    def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+    matcher ? matcher[0][1] : null
+  }
+

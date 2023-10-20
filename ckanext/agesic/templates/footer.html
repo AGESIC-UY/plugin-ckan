@@ -1,0 +1,109 @@
+<footer>
+    <figure>
+        <div class="Feedback">
+            <div class="Container">
+                <div class="u-cfx">
+                    <div class="Feedback-error">
+                        <span>Si encontraste algún error en este sitio:</span>
+                        <a href="{{ h.url_for('agesic_public_blueprint.custom_content1') }}" class="u-ml0">ayúdanos a mejorarlo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </figure>
+    <div class="Footer Footer--minisitio Footer--catalogo">
+        <h2 class="u-hideVisually" data-element-id="headingsMap-11" data-headingsmap-highlight="true">Pie de página</h2>
+        <div class="Footer-body">
+            <div class="Container">
+                <div class="Grid">
+                    <div class="Grid-item u-md-size1of3">
+                        <div class="Footer-info u-md-pr3">
+                            <h3 class="Footer-title">{{ g.site_title }}</h3>
+                            <address>
+                                <p><span>Dirección:</span> Liniers 1324 piso 4</p>
+                                <p><span>Teléfono:</span> (+598) 2901 2929</p>
+                                <p><span>Horario de atención:</span><br>Lunes a viernes de 9:30 a 17:30 hs.</p>
+                                <p><span>Correo electrónico:</span> datosabiertos@agesic.gub.uy</p>
+                                <p><a>Contacto</a></p>
+                            </address>
+                            <div class="Footer-social">
+							<ul>
+								<li><a href="https://web.facebook.com/agesic.uy"><span class="Icon Icon--facebook"></span><span class="u-hideVisually">Facebook</span></a></li>
+								<li><a href="https://twitter.com/agesic"><span class="Icon Icon--twitter"></span><span class="u-hideVisually">Twitter</span></a></li>
+								<li><a href="https://www.youtube.com/user/AGESIC"><span class="Icon Icon--youtube"></span><span class="u-hideVisually">YouTube</span></a></li>
+							</ul>
+						</div>
+                        </div>
+                    </div>
+                    <div class="Grid-item u-md-size2of3">
+                        <div class="Grid">
+                            <div class="Grid-item u-md-size1of3">
+                                <div class="Footer-list"></div>
+                            </div>
+                            <div class="Grid-item u-md-size1of3">
+                                <div class="Footer-list u-md-pl3">
+                                    <h3>Sobre el Catálogo</h3>
+                                    <ul class="u-bullet">
+                                        <li><a href="{{ h.url_for('home.about') }}">Acerca de</a></li>
+                                        <li><a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones?field_tipo_de_publicacion_target_id=36&field_tematica_gubuy=366&field_fecha_by_year=All&field_fecha_by_month=All&field_publico_gubuy=All" target="_blank">Centro de recursos</a></li>
+                                        <li><a href="{{ h.url_for('agesic_public_blueprint.custom_content1') }}">Ayúdanos a mejorar</a></li>
+                                        <li><a href="{{ h.url_for('/terminos-catalogodatos.pdf') }}">Términos de uso</a></li>
+                                        {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version)
+                                        %}
+                                        <li><a href="https://www.gub.uy/contacto">Contacto</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="Grid-item u-md-size1of3">
+                                <div class="Footer-list">
+                                    <h3>Acceso por perfiles</h3>
+                                    <ul class="u-bullet">
+                                        <li>{{ h.build_nav('dataset.search', _('Datasets')) }}
+                                        <li>{{ h.build_nav('organization.index', _('Organizations')) }}
+                                        <li>{{ h.build_nav('group.index', _('Groups')) }}
+                                        <li>{{ h.build_nav('showcase_blueprint.index', _('Showcases')) }}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Footer-logos">
+                            <div class="Footer-logo">
+                                <a href="https://agesic.gub.uy">
+                                    <img src="/images/logo-agesic-blanco.png" alt="Agesic">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <div class="Footer-bottom">
+                <div class="Container">
+                    <div class="Footer-logo u-inlineBlock">
+				<a href="./">
+					<span class="Brand Brand--white Brand--sm">
+						<span class="Brand-text">gub.uy</span>
+					</span>
+				</a>
+			    </div>
+                <div class="Footer-links">
+                    <ul>
+                        <li>Sitio oficial de la República Oriental del Uruguay</li>
+                        <li><a href="#">Mapa del Sitio</a></li>
+                        <li>
+                            <a href="{{ h.url_for('/terminos-catalogodatos.pdf') }}" target="_blank">Términos de uso</a>
+                        </li>
+                        <li><a href="https://www.gub.uy/politica-de-privacidad" target="_blank">Política de
+                            privacidad</a>
+                        </li>
+                        <li><a href="{{ h.url_for('agesic_public_blueprint.custom_accessibility') }}">Declaración de accesibilidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block footer_debug %}
+    {% endblock %}
+</footer>
+

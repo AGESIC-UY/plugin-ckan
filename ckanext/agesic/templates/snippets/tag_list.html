@@ -1,0 +1,19 @@
+{#
+  Render a list of tags linking to the dataset search page
+
+  tags - list of tag dicts
+
+  Example:
+
+    {% snippet 'snippets/tag_list.html', tags=tags, _class='tag-list well' %}
+
+#}
+{% block tag_list %}
+
+    <div class="Tags">
+        {% for tag in tags %}
+          <a class="Tags-item" href="{% url_for 'dataset.search', tags=tag.name %}">{{ h.truncate(tag.display_name, 22) }}</a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

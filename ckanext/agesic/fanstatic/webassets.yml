@@ -1,0 +1,64 @@
+custom:
+  filter: rjsmin
+  output: agesic/%(version)s_custom.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - empty_dictionary.js
+    - custom.js
+
+empty_dictionary:
+  filter: rjsmin
+  output: agesic/%(version)s_empty_dictionary.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - empty_dictionary.js
+
+most_viewed:
+  filter: rjsmin
+  output: agesic/%(version)s_most_viewed.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - most_viewed.js
+    - d3-geomap_min.js
+
+panel:
+  filter: rjsmin
+  output: agesic/%(version)s_panel.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - panel.js
+
+portal-unificado:
+  filter: rjsmin
+  output: agesic/%(version)s_portal_unificado.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - portal-unificado.js
+
+resource-health-and-status:
+  filter: rjsmin
+  output: agesic/%(version)s_resource_health_and_status.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - resource_health_and_status.js
+
+check_resource_health_and_status:
+  filter: rjsmin
+  output: agesic/%(version)s_check_resource_health_and_status.js
+  extra:
+    preload:
+      - base/main
+  contents:
+    - check_resource_health_and_status.js

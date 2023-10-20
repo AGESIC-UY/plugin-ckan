@@ -1,0 +1,31 @@
+{% ckan_extends %}
+
+{% block head_extras %}
+  {{ super() }}
+  <script type="text/javascript">
+    $(function() {
+      function update_url() {
+        pkg = $('input[name="pkg_name"]').first().val();
+        if (pkg != "") {
+          return;
+        }
+        let org = $('#select2-chosen-3').text().toLowerCase().replaceAll(' ', '-');
+        let name = $('.slug-preview-value').text().toLowerCase();
+        $('.slug-preview-value').text(org + '-' + name);
+        $('#field-name').val(org + '-' + name);
+      }
+      $('#field-organizations').change(function(){
+        $('#field-title').trigger('keyup');
+        update_url()
+      });
+      $('#field-title').change(function(){
+        update_url()
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block content_action %}
+    {% link_for _('View dataset'), named_route=pkg.type ~ '.read', id=pkg.name, class_='Button Button--primary', icon='eye' %}
+{% endblock %}
+

@@ -1,0 +1,28 @@
+<li class="Media">
+    <div class="Media-image">
+        {% set url = h.url_for(organization.type ~ '_read', id=organization.name) %}
+
+        <img  class="images-item" src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}"
+             alt="{{ organization.name }}">
+    </div>
+    <div class="Media-body">
+        <h2>
+            <a href="{{ h.url_for('organization.read', id=organization.name) }}">{{ organization.display_name or organization.name }}</a>
+        </h2>
+        {% if organization.description %}
+            {% if truncate == 0 %}
+                {{ h.render_markdown(organization.description)|urlize }}
+            {% else %}
+                {{ h.render_markdown(organization.description | truncate)|urlize }}
+            {% endif %}
+        {% endif %}
+        <p><strong>
+            {% if organization.package_count %}
+                {{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}
+            {% else %}
+                {{ _('0 Datasets') }}
+            {% endif %}
+        </strong></p>
+        <p><strong>{{ _("Last updated") }}:</strong> {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=organization.created %}</p>
+    </div>
+</li>

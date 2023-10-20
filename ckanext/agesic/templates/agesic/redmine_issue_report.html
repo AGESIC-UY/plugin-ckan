@@ -1,0 +1,43 @@
+{% extends "page.html" %}
+
+{% block breadcrumb_content %}
+  <li class="active"><a href="">{{ _('Send feedback') }}</a></li>
+{% endblock %}
+
+{% block main_content %}
+    <div style="margin:50px;">
+        <div>
+            <h2 class="">Reportar un problema</h2>
+            <div class="Alert Alert--warning">Ingrese información del error con el mayor detalle posible. Le
+                informaremos cuando el problema este solucionado.
+            </div>
+        </div>
+
+        {% block form %}
+            <form id="redmine-issue-form" class="dataset-form" method="POST" action="{{ h.url_for('agesic_user_blueprint.issue_report') }}">
+                <div class="form-content">
+                    <div class="form-group">
+                        <label class="control-label"><span class="control-required">*&nbsp;</span>Nombre</label>
+                        <input id="name" maxlength="150" name="name" placeholder="Marta López" type="text"
+                               value="{{ name }}" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"><span class="control-required">*&nbsp;</span>Correo electrónico</label>
+                        <input id="email" maxlength="150" name="email" placeholder="marta@ejemplo.com"
+                               type="email" value="{{ email }}" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"><span class="control-required">*&nbsp;</span>¿Que ha pasado?</label>
+                        <textarea cols="40" id="comments" name="comments"
+                                  placeholder="Hice clic en &quot;X&quot; y luego en &quot;Confirmar&quot;"
+                                  rows="10" value="{{ comments }}" required class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="Button Button--primary">Enviar Informe de fallo</button>
+                </div>
+            </form>
+        {% endblock %}
+        </div>
+    </div>
+{% endblock %}

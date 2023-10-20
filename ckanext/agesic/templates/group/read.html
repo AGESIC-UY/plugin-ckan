@@ -1,0 +1,41 @@
+{% ckan_extends %}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Groups') }}</h2>
+{% endblock %}
+
+{% block content_primary_nav %}{% endblock %}
+
+{% block primary_content_inner %}
+    <h1 class="heading">
+      {{ c.group_dict.display_name }}
+    </h1>
+    <div class="Page-info">
+      <div class="Bar">
+        <div class="Bar-cell">
+          <span class="u-h6 u-textNormal"><strong>{{ c.group_dict.num_followers }}</strong> {{ _('Followers') }}</span>
+        </div>
+        <div class="Bar-cell">
+          <ul class="Page-actions">
+          {% if not hide_follow_button %}
+            <li>
+              {{ h.follow_button('group', c.group_dict.id) }}
+            </li>
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% if c.group_dict.description %}
+      <p>
+        {{ h.markdown_extract(c.group_dict.description, 360) }}
+      </p>
+    {% endif %}
+    {{ super() }}
+{% endblock %}
+
+{% block secondary_content %}
+    {% snippet "snippets/search_helper.html", form_id='group-datasets-search-form', type='dataset', query=c.q,
+    sorting = sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, placeholder=_('Search datasets...'),
+    facets=facets, fields=c.fields, show_empty=request.params, facet_titles=c.facet_titles, extras={'id':c.group_dict.id} %}
+{% endblock %}

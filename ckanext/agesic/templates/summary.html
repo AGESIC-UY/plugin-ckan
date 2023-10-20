@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+
+{% block content%}
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+
+	<div>
+		<div style="margin:50px;">
+			<h2>{{ _('Most viewed datasets') }}</h2> 
+			<p><em>{{ _("Note: this data does not include API calls") }}</em></p>
+			
+			{{ h.package_stats() }}
+			
+			<h2>{{ _("Most downloaded resources") }}</h2>
+			{{ h.resource_stats() }}
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% import 'macros/form.html' as custom_form %}
+{% ckan_extends %}
+
+  {% block custom_fields %}
+
+    {% set exits_oid = [] %}
+
+    {% for extra in data.extras %}
+      {% set prefix = 'extras__%d__' % loop.index0 %}
+        {% if extra.key == 'OID' %}
+          {% do exits_oid.append(1) %}
+          {{ custom_form.custom_key_readonly(
+                names=(prefix ~ 'key', prefix ~ 'value'),
+                id='field-extras-%d' % loop.index0,
+                label=_('OID'),
+                values=('OID', extra.value)
+          ) }}
+        {% else %}
+          {{ form.custom(
+                names=(prefix ~ 'key', prefix ~ 'value', prefix ~ 'deleted'),
+                id='field-extras-%d' % loop.index0,
+                label=_('Custom Field'),
+                values=(extra.key, extra.value, extra.deleted),
+                error=errors[prefix ~ 'key'] or errors[prefix ~ 'value']
+          ) }}
+        {% endif %}
+    {% endfor %}
+
+    {# Add a max if 3 empty columns #}
+    {% for extra in range(data.extras|count, 3) %}
+      {% set index = (loop.index0 + data.extras|count) %}
+      {% set prefix = 'extras__%d__' % index %}
+      {% if exits_oid %}
+          {{ form.custom(
+            names=(prefix ~ 'key', prefix ~ 'value', prefix ~ 'deleted'),
+            id='field-extras-%d' % index,
+            label=_('Custom Field'),
+            values=(extra.key, extra.value, extra.deleted),
+            error=errors[prefix ~ 'key'] or errors[prefix ~ 'value']
+          ) }}
+      {% else %}
+          {% do exits_oid.append(1) %}
+          {{ custom_form.custom_key_readonly(
+                names=(prefix ~ 'key', prefix ~ 'value'),
+                id='field-extras-%d' % index,
+                label=_('OID'),
+                values=('OID', extra.value)
+          ) }}
+      {% endif %}
+    {% endfor %}
+  {% endblock %}

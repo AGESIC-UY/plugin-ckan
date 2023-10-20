@@ -1,0 +1,50 @@
+{% ckan_extends %}
+
+{% block page_primary_action %}
+    <div class="page_primary_action">
+    {% if h.check_access('package_create', {'owner_org': c.group_dict.id}) %}
+      {% snippet 'snippets/add_dataset.html', group=c.group_dict.id %}
+      <a href="{{ h.url_for('agesic_user_blueprint.publicador_da') }}" class="Button Button--primary">
+          <i class="fa fa-plus-square"></i> Transformar y agregar
+      </a>
+      <a href="{{ h.url_for('agesic_user_blueprint.publicador_da_2') }}" class="Button Button--primary" id="button_publicador_da_2">
+          <i class="fa fa-plus-square"></i> Transformar y actualizar
+      </a>
+    {% endif %}
+    {% if h.check_access('organization_update', {'id': c.group_dict.id}) %}
+       {% link_for _('Manage'), id=c.group_dict.name, class_='Button Button--primary', icon='wrench', named_route=group_type + '.edit'  %}
+  {% endif %}
+    </div>
+{% endblock %}
+
+{% block primary_content_inner %}
+    <h1 class="heading">
+      {{ c.group_dict.display_name }}
+    </h1>
+    <div class="Page-info">
+      <div class="Bar">
+        <div class="Bar-cell">
+          <span class="u-h6 u-textNormal"><strong>{{ c.group_dict.num_followers }}</strong> {{ _('Followers') }}</span>
+        </div>
+        <div class="Bar-cell">
+          <ul class="Page-actions">
+          {% if not hide_follow_button %}
+            <li>
+              {{ h.follow_button('group', c.group_dict.id) }}
+            </li>
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% if c.group_dict.description %}
+        {{ h.render_markdown(c.group_dict.description, 360) }}
+    {% endif %}
+    {{ super() }}
+{% endblock %}
+
+{% block secondary_content %}
+    {% snippet "snippets/search_helper.html", form_id='organization-datasets-search-form', type='dataset', query=c.q,
+    sorting = sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, placeholder=_('Search datasets...'),
+    show_empty=request.params, fields=c.fields, facet_titles=c.facet_titles, extras={'id':c.group_dict.id} %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "organization/snippets/organization_form.html" %}
+
+{% block custom_fields %}
+  {% if action == "edit" %}
+      {{ super() }}
+  {% else %}
+      {% for extra in range(1) %}
+          {% set prefix = 'extras__%d__' % loop.index0 %}
+          {{ custom_form.custom_key_readonly(
+                names=(prefix ~ 'key', prefix ~ 'value'),
+                id='field-extras-%d' % loop.index0,
+                label=_('OID'),
+                values=('OID', extra.value)
+          ) }}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+

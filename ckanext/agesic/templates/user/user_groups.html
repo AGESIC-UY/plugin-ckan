@@ -1,0 +1,19 @@
+{% extends "user/read.html" %}
+
+{% block subtitle %}{{ _('Group') }} {{ g.template_title_delimiter }} {{ super() }}{% endblock %}
+
+{% block primary_content_inner %}
+  <h2 class="hide-heading">{{ _('Groups') }}</h2>
+  {% if groups %}
+    <div class="wide">
+      {% snippet "group/snippets/group_list.html", groups=groups %}
+    </div>
+  {% else %}
+    <p class="empty">
+      {{ _('You are not a member of any groups.') }}
+      {% if h.check_access('group_create') %}
+        {% link_for _('Create one now?'), controller='group', action='new' %}
+      {% endif %}
+    </p>
+  {% endif %}
+{% endblock %}

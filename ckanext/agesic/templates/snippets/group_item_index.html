@@ -1,0 +1,24 @@
+{% set type = group.type or 'group' %}
+{% set url = h.url_for(type ~ '_read', id=group.name) %}
+{% block item %}
+    <li class="Grid-item">
+        <a href="{{ url }}">
+          <div class="Flag">
+            {% block item_inner %}
+                {% block image %}
+                    <div class="Flag-image">
+                        <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="Icóno categoría {{ group.name }}">
+                    </div>
+                {% endblock %}
+                <div class="Flag-body">
+                    {% block title %}
+                    <span class="Box-title" data-element-id="headingsMap-3" data-headingsmap-highlight="true">{{ h.get_translated(group, 'title') or group.display_name }}</span>
+                    {% endblock %}
+<!--                    {% block link %}{% endblock %}-->
+                    <span class="Box-info">{{ h.group_packages_count(group.id) }} conjuntos de datos</span>
+                </div>
+            {% endblock %}
+          </div>
+        </a>
+    </li>
+{% endblock %}

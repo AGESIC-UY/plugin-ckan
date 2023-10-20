@@ -1,0 +1,17 @@
+<div class="Box Box--listadoVertical">
+
+  <div class="Box-header">
+    <h3 class="Box-name" data-element-id="headingsMap-15" data-headingsmap-highlight="true">{{ _('Últimas actualizaciones') }}</h3>
+  </div>
+
+  <div class="Box-body">
+    <ul class="Box-mediaList List">
+      {{ h.most_recent() }}
+    </ul>
+  </div>
+
+  <div class="Box-footer">
+    <a href="/dataset?sort=metadata_modified+desc" class="Box-more">Ver más actualizaciones recientes</a>
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+{% import 'macros/form.html' as form %}
+
+{% set placeholder = placeholder if placeholder else _('Search datasets...') %}
+{% set sorting = sorting if sorting else [(_('Name Ascending'), 'name asc'), (_('Name Descending'), 'name desc')] %}
+{% set search_class = search_class if search_class else 'search-giant' %}
+{% set no_bottom_border = no_bottom_border if no_bottom_border else false %}
+{% set form_id = form_id if form_id else false %}
+{% set facet_titles = facet_titles if facet_titles else false %}
+{% set extras = extras if extras else false %}
+
+{#<div id="content-aria-order-{{ form_id }}" role="search">#}
+<div class="filters">
+  <h3 class="u-p2 u-pt3 u-mb0">{{ _('Filters') }}</h3>
+    <div class="Search u-m2 u-mt1">
+        <form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %}"
+      method="get" data-module="select-switch">
+            <label for="search-filter" class="u-hideVisually">{{ placeholder }}</label>
+            <input id="search-filter" class="Search-input" aria-label="search" type="search" name="q" value="{{ query|escape }}" autocomplete="off" placeholder="{{ placeholder }}" required pattern="[a-zA-Z0-9Á-ü .+-_,]+">
+            <button class="Search-button">{{ _('Search') }}</button>
+        </form>
+    </div>
+    <div>
+        {% for facet in c.facet_titles %}
+            {{ h.snippet('snippets/facet_list.html', title=facet_titles[facet], name=facet, extras=extras) }}
+        {% endfor %}
+    </div>
+  <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+</div>
+{#</div>#}

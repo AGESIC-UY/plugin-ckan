@@ -1,0 +1,17 @@
+{% set truncate=truncate or 0 %}
+<div class="Box-header">
+  <h3 class="Box-name">{{ _('Most viewed datasets my organization') }}</h3>
+</div>
+<ul class="List">
+  {% for p in packages %}
+      <li class="List-item u-px0">
+        <div class="Media-body">
+           <h3 class="Box-title u-h5 u-pt1 u-mb1"> {{ h.link_to(h.truncate(p.title, truncate), h.url_for(p.type + '.read', id=p.name)) }} </h3>
+           <p class="u-textSmall u-mb1"><strong>Vistas: </strong>{{ p.visits_ever }}</p>
+        </div>
+    </li>
+  {% endfor %}
+</ul>
+<div class="Box-footer">
+  <a href="/dataset" class="Box-more">{{ _('See my most viewed datasets') }}</a>
+</div>

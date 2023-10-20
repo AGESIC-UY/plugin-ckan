@@ -1,0 +1,19 @@
+{% block application_list %}
+    <div class="Box Box--mf Box--listadoAccesos Box--color2">
+        <div class="Box-header">
+            <h3 class="Box-name" data-element-id="headingsMap-23" data-headingsmap-highlight="true">{{ _('Most popular applications') }}</h3>
+        </div>
+        <div class="Box-body">
+            <ul class="Box-gridList Grid Grid--rowSize3">
+                {% block application_list_inner_index %}
+                    {% for showcase in h.most_popular_applications() %}
+                        {% snippet "snippets/application_item_index.html", showcase=showcase, position=loop.index %}
+                    {% endfor %}
+                {% endblock %}
+            </ul>
+        </div>
+        <div class="Box-footer">
+            <a href="/showcase" class="Box-more">{{ _("Ver más aplicaciones") }}</a>
+        </div>
+    </div>
+{% endblock %}

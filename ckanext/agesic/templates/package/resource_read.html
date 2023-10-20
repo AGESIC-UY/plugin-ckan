@@ -1,0 +1,185 @@
+{% ckan_extends %}
+
+{% block resource_actions %}{% endblock %}
+
+{% block pre_primary %}{% endblock %}
+
+
+{% block resource_additional_information %}
+  <span class="Page-subtitle">{{ _('Resources') }}</span>
+  {% if res %}
+    {% block resource_content %}
+      {% block resource_read_title %}
+        <h2 class="page-title">{{ h.resource_display_name(res) | truncate(50) }}</h2>
+      {% endblock %}
+    {% endblock %}
+    {% block resource_read_url %}
+      {% if res.url and h.is_url(res.url) %}
+        <p class="text-muted ellipsis">{{ _('URL:') }}
+          <a class="resource-url-analytics resource-type-{{ res.resource_type }}" href="{{ res.url }}" title="{{ res.url }}" download>{{ res.url }}</a>
+        </p>
+      {% elif res.url %}
+        <p class="text-muted break-word resource-url-analytics resource-type-{{ res.resource_type }}">{{ _('URL:') }} {{ res.url }}</p>
+      {% endif %}
+    {% endblock %}
+
+      <div class="Page-info">
+        <div class="Bar">
+          <div class="Bar-cell">
+            <div class="Page-date"><strong>Última actualización:</strong>
+              {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=(res.last_modified or res.Creado or _('unknown')) %}
+            </div>
+          </div>
+          <div class="Bar-cell">
+            <ul class="Page-actions">
+              <li>
+                <a href="#" class="Button Button--small">
+                  <span class="Icon Icon--print Icon--small"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="Download">
+        <div class="Media">
+          <div class="Media-image">
+            <span class="File-icon">
+              <span class="File-icon Icon--{{ (res.mimetype_inner or res.mimetype or res.format or _('unknown')).lower() }}"></span>
+            </span>
+          </div>
+          <div class="Media-body">
+            <div property="rdfs:label">
+              {% if res.description %}
+                {{ h.render_markdown(res.description) }}
+              {% endif %}
+              {% if not res.description and package.notes %}
+                <h3>{{ _('Dataset description:') }}</h3>
+                <blockquote>
+                  {{ h.markdown_extract(h.get_translated(package, 'notes')) }}
+                </blockquote>
+                <p class="Download-description u-textBlack">{% trans dataset=package.title, url=h.url_for(package.type ~ '.read',
+                    id=package.id if is_activity_archive else package.name) %}Source: <a href="{{ url }}">{{ dataset }}</a>{% endtrans %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% snippet 'package/snippets/resource_menu.html', pkg=pkg, res=res %}
+
+      <div class="hidden_element">
+          <span class="hidden_element" id="org_name" type="hidden">{{ pkg.organization.title or pkg.organization.name }}</span>
+          <span class="hidden_element" id="id_org" type="hidden">{{ pkg.organization.id }}</span>
+          <span class="hidden_element" id="dat_name" type="hidden">{{ h.dataset_display_name(pkg) }}</span>
+          <span class="hidden_element" id="id_dat" type="hidden" >{{ pkg_dict.id }}</span>
+          <span class="hidden_element" id="rec_name" type="hidden">{{ h.resource_display_name(res) | truncate(50) }}</span>
+          <span class="hidden_element" id="id_rec" type="hidden">{{ res.id }}</span>
+          <span class="hidden_element" id="form_ext" type="hidden">{{ res.format.lower() or 'data' }}</span>
+        </div>
+    <section class="module">
+      <div class="module-content">
+        <h3 class="info-add">{{ _('Additional Information') }}</h3>
+        <table class="Table">
+          <thead>
+            <tr>
+              <th>{{ _('Field') }}</th>
+              <th>{{ _('Value') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-title="Título Columna 1">{{ _("ID") }}</td>
+              <td data-title="Título Columna 2">{{ res.id }}</td>
+            </tr>
+            <tr>
+              <td data-title="Título Columna 1">{{ _('State') }}</td>
+                <td data-title="Título Columna 2"><span class="Status Status--{{ h.show_resource_state().lower() }}">{{ h.show_resource_state() }}</span></td>
+            </tr>
+            <tr>
+              <td data-title="Título Columna 1">{{ _('Last updated') }}</td>
+              <td data-title="Título Columna 2">{% snippet 'snippets/local_friendly_datetime.html', datetime_obj=(res.last_modified or res.Creado or _('unknown')) %}</td>
+            </tr>
+            <tr>
+              <td data-title="Título Columna 1">{{ _('Created') }}</td>
+              <td data-title="Título Columna 2">{% snippet 'snippets/local_friendly_datetime.html', datetime_obj=(res.Creado or _('unknown'))%}</td>
+            </tr>
+            <tr>
+              <td data-title="Título Columna 1">{{ _('Format') }}</td>
+              <td data-title="Título Columna 2">
+                <span class="Tags-item Tags-item--{{ (res.mimetype_inner or res.mimetype or res.format or _('unknown')).lower() }} u-mb0">
+                  {{ res.mimetype_inner or res.mimetype or res.format or _('unknown') }}
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td data-title="Título Columna 1">{{ _('License') }}</td>
+              <td data-title="Título Columna 2">{% snippet "snippets/license.html", pkg_dict=pkg, text_only=True %}</td>
+            </tr>
+            {% if res.update_frequency %}
+              <tr>
+                <td data-title="Título Columna 1">{{ _("Update Frequency") }}</td>
+                <td data-title="Título Columna 2">{{ h.get_update_frequency_text_resource(res.update_frequency) }}</td>
+              </tr>
+            {% endif %}
+            {% if res.spatial_ref_system %}
+              <tr>
+                <td data-title="Título Columna 1">{{ _("Spatial Ref. System") }}</td>
+                <td data-title="Título Columna 2">{{ res.spatial_ref_system }}</td>
+              </tr>
+            {% endif %}
+            {% if res.spatial_coverage %}
+              <tr>
+                <td data-title="Título Columna 1">{{ _("Spatial Coverage") }}</td>
+                <td data-title="Título Columna 2">{{ res.spatial_coverage }}</td>
+              </tr>
+            {% endif %}
+            {% if res.temporal_coverage %}
+              <tr>
+                <td data-title="Título Columna 1">{{ _("Temporal Coverage") }}</td>
+                <td data-title="Título Columna 2">{{ res.temporal_coverage }}</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  {% endif %}
+  {% if res.datastore_active %}
+    {% set ddict=h.datastore_dictionary(res.id) %}
+    <div id="data-dictionary" class="module-content">
+    </div>
+  {% endif %}
+  {% if h.show_qa_stats() %}
+    <div class="module-content">
+      {{ h.qa_openness_stars_resource_html(c.resource) }}
+    </div>
+  {% endif %}
+  {% if h.show_archiver_stats() %}
+    <div class="module-content">
+      {{ h.archiver_is_resource_broken_html(c.resource) }}
+    </div>
+    <div class="module-content">
+      {{ h.archiver_is_resource_cached_html(c.resource) }}
+    </div>
+  {% endif %}
+
+  {% block data_preview %} {{ super() }}{% endblock %}
+
+{% endblock %}
+
+
+{% block secondary_content %}
+
+  {% block resources_list %}
+    {% snippet "package/snippets/resources.html", pkg=pkg, active=res.id, action='read', is_activity_archive=is_activity_archive %}
+  {% endblock %}
+
+  {% block resource_license %}{% endblock %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {% asset 'agesic/empty_dictionary' %}
+{% endblock %}

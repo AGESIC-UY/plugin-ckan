@@ -1,0 +1,9 @@
+{% if following %}
+  <a href="{{ h.url_for(obj_type + '.unfollow', id=obj_id) }}" class="{% block following_class %}Button Button--primary{% endblock %}" data-module="follow" data-module-type="{{ obj_type }}" data-module-id="{{ obj_id }}" data-module-action="unfollow">
+    {{ _('Unfollow') }}
+  </a>
+{% else %}
+  <a href="{{ h.url_for(obj_type + '.follow', id=obj_id) }}" class="{% block unfollowing_class %}Button Button--primary{% endblock %}" data-module="follow" data-module-type="{{ obj_type }}" data-module-id="{{ obj_id }}" data-module-action="follow">
+    {{ _('Follow') }}
+  </a>
+{% endif %}

@@ -1,0 +1,271 @@
+<main id="contenido" class="u-main">
+    <h2 class="Page-title u-hideVisually">Página principal</h2>
+    <div id="content-user-aria" role="complementary">
+        {% if c.user %}
+
+        <div class="Group Group--color1 u-mt0 u-pt6">
+            <div class="Container">
+                <h2 class="Group-title">{{ c.user }}</h2>
+                {{ h.my_resources_broken_links() }}
+                <div class="Module Module--md layout-1-module-1">
+                    <div class="Grid">
+                        <div class="Grid-item u-md-size1of3">
+                            <div class="Module-item Module-item--3of3">
+                                <div class="Box Box--mf">
+                                    {{ h.most_viewed_table() }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Grid-item u-md-size1of3">
+                            <div class="Module-item Module-item--3of3">
+                                <div class="Box Box--mf">
+                                    {{ h.my_next_resources_due_dates() }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Grid-item u-md-size1of3">
+                            <div class="Module-item Module-item--3of3">
+                                <div class="Module-item Module-item--full">
+                                <div class="Box Box--mf Box--listadoEnlaces">
+                                    {{ h.my_activity() }}
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accesos directos -->
+                <div class="Module Module--120">
+                    <div class="Grid">
+                        <div class="Grid-item u-md-size1of3">
+                            <div class="Module-item Module-item--3of3">
+                                <a href="/agesic/portal/panel" class="Box Box--mf Box--acceso Box--color3">
+                                    <div class="Flag">
+                                        <div class="Flag-image">
+                                            <img class="u-circle" src="/images/icono-mas.jpg" alt="">
+                                        </div>
+                                        <div class="Flag-body">
+                                            <h3 class="Box-title">Panel de estadísticas</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="Grid-item u-md-size1of3">
+                            <div class="Module-item Module-item--3of3">
+                                <a href="/showcase/new" class="Box Box--mf Box--acceso Box--color4">
+                                    <div class="Flag">
+                                        <div class="Flag-image">
+                                            <img class="u-circle" src="/images/icono-ceibal.jpg" alt="">
+                                        </div>
+                                        <div class="Flag-body">
+                                            <h3 class="Box-title">Nueva aplicación o uso de datos</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="Grid-item u-md-size1of3">
+                            <div class="Module-item Module-item--3of3">
+                                <a href="/user/edit/{{ c.userobj.name }}" class="Box Box--mf Box--acceso Box--accesoCentrado Box--color1">
+                                    <div class="Flag">
+                                        <div class="Flag-body">
+                                          <h3 class="Box-title">{{ _('Manage user') }}</h3>
+                                          <span class="Box-info">{{ c.user }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="Group-footer">-->
+<!--                  <a href="#">Ver estadísticas</a>-->
+<!--                </div>-->
+
+            </div>
+        </div>
+
+        {% endif %}
+
+        <div class="Container">
+
+            <div class="Module Module--sm">
+                <div class="Grid">
+                    <div class="Grid-item u-md-size2of3">
+                        <div class="Module-item">
+                            <div class="Box Box--mf Box--color4 Box--listadoHorizontal Box--stats">
+                                <div class="Box-header u-mb2">
+                                    <h3 class="Box-name">Catálogo de Datos Abiertos</h3>
+                                </div>
+                                <div class="Box-body u-ml0">
+                                    <p class="Box-text u-mb2">El Catálogo Nacional de Datos Abiertos
+                                        permite acceder a datos abiertos de organismos públicos, academia, organizaciones
+                                        de sociedad civil y empresas privadas. Cualquier persona puede utilizar los
+                                        datos publicados libremente para contar historias, desarrollar investigaciones,
+                                        visualizaciones, aplicaciones cívicas y emprendimientos.</p>
+                                    <ul class="Box-gridList Grid Grid--rowSize3">
+                                        <li class="Grid-item u-sizeFull u-sm-size1of3">
+                                            <a href="/dataset">
+                                                <span class="Box-value u-textSemiBold">{{ h.packages_count() }}</span>
+                                                <span class="Box-title">Conjuntos de datos publicados</span>
+                                            </a>
+                                        </li>
+                                        <li class="Grid-item u-sizeFull u-sm-size1of3">
+                                            <a href="/organization">
+                                                <span class="Box-value u-textSemiBold">{{ h.organization_count() }}</span>
+                                                <span class="Box-title">Organizaciones publicadoras</span>
+                                            </a>
+                                        </li>
+                                        <li class="Grid-item u-sizeFull u-sm-size1of3">
+                                            <a href="/group">
+                                                <span class="Box-value u-textSemiBold">{{ h.group_count() }}</span>
+                                                <span class="Box-title">Categorías de datos publicadas</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-item u-md-size1of3">
+                        <div class="Module-item">
+                            <a href="/dataset?sort=metadata_modified+desc" class="Box Box--mf Box--destacado4">
+                                <div class="Box-body">
+											<span class="Box-image">
+												<img src="./images/icono_escalera_color.jpg"
+                                                     alt="Ícono de gráfica">
+											</span>
+                                    <span class="Box-title">Últimas actualizaciones</span>
+                                    <span class="Box-subtitle">Explorá los conjuntos de datos actualizados recientemente</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Module Module--1200">
+                <div class="Grid">
+                    <div class="Grid-item u-md-size2of3">
+                        <div class="Box Box--mf Box--color7">
+                            <div class="Box-header">
+                                <h3 class="Box-name">Datos más populares en las últimas dos semanas</h3>
+                            </div>
+                            {% snippet 'home/snippets/most_viewed.html' %}
+                        </div>
+                    </div>
+                    <div class="Grid-item u-md-size1of3">
+
+                        <div class="Module-item Module-item--1of3">
+                            <div class="Box Box--mf Box--destacado2 Box--solid">
+                                <div class="Box-cover">
+                                    <img class="Box-image" src="./images/D2_fondo-datos-abiertos.jpg" alt="Fondo de datos abiertos">
+                                </div>
+                                <div class="Box-overlay">
+                                    <a href="{{ h.url_for('agesic_public_blueprint.custom_content1') }}" class="Box-title">¿No encontrás los datos que necesitás?</a>
+                                    <p class="Box-text">Ahora podes contactar al equipo de datos para solicitar ayuda</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Module-item Module-item--1of3">
+                            <div class="Box Box--mf Box--destacado2 Box--solid">
+                                <div class="Box-cover">
+                                    <img class="Box-image" src="./images/D2_fondo-visualizador.jpg" alt="Imagen de computadora con visualizaro de datos">
+                                </div>
+                                <div class="Box-overlay">
+                                    <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/listado-por-filtro?tipo%5B0%5D=noticias&amp;tematica%5B0%5D=366" class="Box-title">Novedades</a>
+                                    <p class="Box-text">Conocé las iniciativas y últimas novedades sobre Datos
+                                        Abiertos que se están desarrollando en Uruguay</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Module-item Module-item--1of3">
+                            <a href="{{ h.url_for('agesic_public_blueprint.panel') }}" class="Box Box--mf Box--destacado4">
+                                <div class="Box-body">
+												<span class="Box-image">
+													<img src="./images/icono_grafica_color.jpg" alt="Ícono de gráfica">
+												</span>
+                                    <span class="Box-title">Panel de estadísticas</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="Group Group--color3">
+                <div class="Container">
+                    <div class="Module Module--md">
+                        <div class="Grid">
+                            <div class="Grid-item u-md-size2of3">
+                                <div class="Module-item Module-item--3of3">
+                                    {% block featured_organization %}
+                                    {% snippet 'snippets/popular_groups.html' %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                            <div class="Grid-item u-md-size1of3">
+                                <div class="Module-item Module-item--2of3">
+                                <div class="Box Box--mf Box--listadoEnlaces Box--color6">
+                                    <div class="Box-header">
+                                        <h3 class="Box-name">Guías y recursos de Datos Abiertos</h3>
+                                    </div>
+                                    <div class="Box-body">
+                                        <p class="Box-text">Conocé los documentos necesarios para comenzar a abrir datos
+                                            de tu organismo.</p>
+                                        <ul class="u-bullet">
+                                            <li>
+                                                <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/noticias/estrategia-datos-abiertos-uruguay-2025">Estrategia
+                                                    de Datos Abiertos</a></li>
+                                            <li>
+                                                <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/institucional/normativa?field_tipo_de_norma_target_id=All&amp;year=all&amp;month=all&amp;field_tematica_gubuy=366&amp;field_publico_gubuy=All">Normativa
+                                                    de Datos Abiertos</a></li>
+                                            <li>
+                                                <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones?field_tipo_de_publicacion_target_id=36&amp;field_tematica_gubuy=366&amp;field_fecha_by_year=All&amp;field_fecha_by_month=All&amp;field_publico_gubuy=All">Guías
+                                                    técnicas</a></li>
+                                            <!--
+                                            <li><a href="#">Proyectos con Organismos</a></li>
+                                            <li><a href="#">Estadísticas del Catálogo</a></li>
+                                            <li><a href="#">Guías para visualizaciones</a></li>
+                                            -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="Module-item Module-item--1of3">
+										<a href="{{ h.url_for('agesic_public_blueprint.custom_content1') }}" class="Box Box--mf Box--acceso Box--color4">
+											<div class="Flag">
+													<div class="Flag-image">
+															<img src="./images/icono_mail_color.jpg" alt="Ícono de correo">
+													</div>
+													<div class="Flag-body">
+															<span class="Box-title">Ayudanos a mejorar</span>
+														<span class="Box-info">Dejá tu opinión y tus ideas. Consideramos todas las sugerencias para mejorar nuestros contenidos.</span>
+													</div>
+											</div>
+										</a>
+									</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Container">
+            <div class="Module Module--sm">
+                <div class="Grid">
+                    <div class="Grid-item u-md-size3of3">
+                        <div class="Module-item Module-item--3of3">
+                            {% block featured_applications%}
+                            {% snippet 'snippets/popular_applications.html' %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</main>

@@ -1,0 +1,60 @@
+{% block resource_actions %}
+    {% if h.check_access('package_update', {'id':pkg.id }) and not is_activity_archive %}
+        <li style="display: inline-block;">{% link_for _('Manage'), named_route=pkg.type ~ '_resource.edit', id=pkg.name, resource_id=res.id, class_='Button Button--primary', icon='wrench' %}</li>
+        {% set action = h.url_for('datapusher.resource_data', id=pkg.name, resource_id=res.id) %}
+        {% set show_table = true %}
+        <li style="display: inline-block;">
+            <form method="post" action="{{ action }}" class="datapusher-form">
+                <button class="Button Button--primary" name="save" type="submit">
+                    <i class="fa fa-cloud-upload"></i> {{ _('Upload to DataStore') }}
+                </button>
+            </form>
+        </li>
+    {% endif %}
+    {% if res.url and h.is_url(res.url) %}
+        <li style="display: inline-block;">
+            <div class="btn-group" style="display: inline-flex;">
+                <a class="Button Button--primary resource-url-analytics resource-type-{{ res.resource_type }}"
+                   href="{{ res.url }}" download>
+                    {% if res.resource_type in ('listing', 'service') %}
+                        <i class="fa fa-eye"></i> {{ _('View') }}
+                    {% elif res.resource_type == 'api' %}
+                        <i class="fa fa-key"></i> {{ _('API Endpoint') }}
+                    {% elif res.url_type == 'upload' and res.update_frequency != '0' %}
+                        <i class="fa fa-arrow-circle-o-down"></i> {{ _('Download') }}
+                    {% else %}
+                        <i class="fa fa-external-link"></i> {{ _('Go to resource') }}
+                    {% endif %}
+                </a>
+
+                {% block download_resource_button %}
+                    {% if res.datastore_active %}
+                        <button class="Button Button--primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                {% if res.format not in ['CSV', 'JSON', 'XML'] %}
+                                    <a href="{{ res.url }}" download
+                                       class="resource-url-analytics resource-type-{{ res.resource_type }}">
+                                        <span>{{ res.mimetype_inner or res.mimetype or res.format or _('unknown') }}</span>
+                                    </a>
+                                {% endif %}
+                                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, bom=True) }}"
+                                   download class="resource-url-analytics resource-type-{{ res.resource_type }}"><span>CSV</span></a>
+                                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, format='json') }}"
+                                   download class="resource-url-analytics resource-type-{{ res.resource_type }}"><span>JSON</span></a>
+                                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, format='xml') }}"
+                                   download class="resource-url-analytics resource-type-{{ res.resource_type }}"><span>XML</span></a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </li>
+        <li style="display: inline-block;">
+            <span id="{{ res.id }}"
+                  class="Status Status--{{ h.show_resource_state().lower() }}">{{ h.show_resource_state() }}</span>
+        </li>
+    {% endif %}
+{% endblock %}

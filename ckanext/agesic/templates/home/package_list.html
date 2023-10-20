@@ -1,0 +1,3 @@
+{% for package in packages %}
+  {% snippet 'home/package_item.html', package=package, item_class=item_class, hide_resources=hide_resources, banner=banner, truncate=truncate, truncate_title=truncate_title, show_package_organization=show_package_organization %}
+{% endfor %}

@@ -1,0 +1,1767 @@
+# Spanish translations for ckanext-agesic.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the ckanext-agesic
+# project.
+# FIRST AUTHOR <apacheco@servinfo.com.uy>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-agesic 0.6\n"
+"Report-Msgid-Bugs-To: apacheco@servinfo.com.uy\n"
+"POT-Creation-Date: 2017-10-07 23:30-0300\n"
+"PO-Revision-Date: 2017-10-07 23:31-0300\n"
+"Last-Translator: Aníbal Pacheco <apacheco@servinfo.com.uy>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/agesic/controllers/csv.py:17
+msgid "Unauthorized to list all datasets"
+msgstr "El usuario no está autorizado para listar todos los datasets"
+
+#: ckan/controllers/group.py:305 ckan/controllers/home.py:61
+#: ckan/controllers/package.py:240 ckan/lib/helpers.py:833
+#: ckan/templates/header.html:104 ckan/templates/organization/edit_base.html:5
+#: ckan/templates/organization/edit_base.html:8
+#: ckan/templates/organization/index.html:3
+#: ckan/templates/organization/index.html:6
+#: ckan/templates/organization/index.html:18
+#: ckan/templates/organization/read_base.html:3
+#: ckan/templates/organization/read_base.html:6
+#: ckan/templates/package/base.html:14
+#: ckanext/agesic/templates/header.html:17
+msgid "Organizations"
+msgstr "Publicadores"
+
+msgid "Go to gub.uy"
+msgstr "Ir a gub.uy"
+#: ckan/controllers/group.py:306 ckan/controllers/home.py:62
+#: ckan/controllers/package.py:241 ckan/lib/helpers.py:834
+#: ckan/templates/group/base_form_page.html:6 ckan/templates/group/edit.html:4
+#: ckan/templates/group/edit_base.html:4
+#: ckan/templates/group/edit_base.html:10 ckan/templates/group/index.html:3
+#: ckan/templates/group/index.html:6 ckan/templates/group/index.html:18
+#: ckan/templates/group/members.html:3 ckan/templates/group/read_base.html:3
+#: ckan/templates/group/read_base.html:6 ckan/templates/header.html:105
+#: ckan/templates/package/group_list.html:5
+#: ckan/templates/package/read_base.html:20
+#: ckan/templates/revision/diff.html:16 ckan/templates/revision/read.html:84
+msgid "Groups"
+msgstr "Categorías"
+
+msgid "My Showcases"
+msgstr "Mis Aplicaciones"
+
+#: ckanext/showcase/templates/snippets/popular_applications.html:4
+msgid "Most popular applications"
+msgstr "Aplicaciones más populares"
+
+#: ckanext/agesic/templates/admin/manage_agesic_configuration.html:11
+msgid "AGESIC Configuration"
+msgstr "Configuración de AGESIC"
+
+#: ckanext/agesic/templates/admin/manage_agesic_configuration.html:17
+msgid "Resource views in the index"
+msgstr "Vistas de recursos en la portada"
+
+#: ckanext/agesic/templates/admin/manage_agesic_configuration.html:18
+msgid "Left view"
+msgstr "Vista izquierda"
+
+#: ckanext/agesic/templates/admin/manage_agesic_configuration.html:19
+msgid "Right view"
+msgstr "Vista derecha"
+
+#: ckanext/agesic/templates/snippets/dashboard_index.html:19
+msgid "Featured Visualizations"
+msgstr "Visualizaciones destacadas"
+
+#: ckanext/agesic/templates/snippets/dashboard_index.html:20
+msgid "View's height"
+msgstr "Altura del panel"
+
+#: ckanext/agesic/templates/summary.html:11
+msgid "Most viewed datasets"
+msgstr "Conjuntos de datos más vistos"
+
+msgid "Most viewed datasets my organization"
+msgstr "Conjuntos de datos más vistos de mi organización"
+
+msgid "Visits"
+msgstr "Visitas"
+
+msgid "Visits by country"
+msgstr "Visitas por país"
+
+msgid "Visits by day/hour"
+msgstr "Visitas por día/hora"
+
+#: ckanext/agesic/templates/summary.html:12
+msgid "Note: this data does not include API calls"
+msgstr "Nota: Estos datos no incluyen los llamados a la API"
+
+#: ckanext/agesic/templates/summary.html:16
+msgid "Most downloaded resources"
+msgstr "Recursos más descargados"
+
+#: ckanext/agesic/templates/snippets/package_stats_summary.html:6
+msgid "Dataset"
+msgstr "Conjunto de datos"
+
+#: ckanext/agesic/templates/snippets/package_stats_summary.html:7
+msgid "Unique views (last 14 days)"
+msgstr "Vistas únicas (últimos 14 días)"
+
+#: ckanext/agesic/templates/snippets/package_stats_summary.html:8
+msgid "Unique views (since recording started)"
+msgstr "Vistas únicas (desde el comienzo)"
+
+#: ckanext/agesic/templates/snippets/package_stats_summary.html:9
+#: ckanext/agesic/templates/snippets/resource_stats_summary.html:9
+msgid "Owner organization"
+msgstr "Organización propietaria"
+
+#: ckanext/agesic/templates/snippets/package_stats_summary.html:24
+#: ckanext/agesic/templates/snippets/resource_stats_summary.html:24
+msgid "Access statistics are enabled only for administrator users"
+msgstr "Las estadísticas de acceso están habilitadas solo para usuarios administradores"
+
+#: ckanext/agesic/templates/snippets/resource_stats_summary.html:6
+msgid "Resource"
+msgstr "Recurso"
+
+#: ckanext/agesic/templates/snippets/resource_stats_summary.html:7
+msgid "Downloads (last 14 days)"
+msgstr "Descargas (últimos 14 días)"
+
+#: ckanext/agesic/templates/snippets/resource_stats_summary.html:8
+msgid "Downloads (since recording started)"
+msgstr "Descargas (desde el comienzo)"
+
+#: ckanext/agesic/templates/snippets/resource_stats_summary.html:15
+msgid "in"
+msgstr "en"
+
+#: ckan/controllers/feed.py:233 ckan/controllers/group.py:137
+#: ckan/controllers/group.py:225 ckan/controllers/group.py:393
+#: ckan/controllers/group.py:503 ckan/controllers/group.py:536
+#: ckan/controllers/group.py:566 ckan/controllers/group.py:577
+#: ckan/controllers/group.py:631 ckan/controllers/group.py:649
+#: ckan/controllers/group.py:707 ckan/controllers/group.py:739
+#: ckan/controllers/group.py:772 ckan/controllers/group.py:829
+#: ckan/controllers/group.py:926 ckan/controllers/package.py:1243
+#: ckan/controllers/package.py:1258 ckan/logic/action/create.py:1396
+msgid "Group not found"
+msgstr "Categoría no encontrada"
+
+#: ckan/controllers/group.py:139 ckan/controllers/group.py:580
+msgid "Incorrect group type"
+msgstr "Tipo de categoría incorrecto"
+
+#: ckan/controllers/group.py:305 ckan/controllers/home.py:61
+#: ckan/controllers/package.py:240 ckan/lib/helpers.py:833
+#: ckan/templates/header.html:104 ckan/templates/organization/edit_base.html:5
+#: ckan/templates/organization/edit_base.html:8
+#: ckan/templates/organization/index.html:3
+#: ckan/templates/organization/index.html:6
+#: ckan/templates/organization/index.html:18
+#: ckan/templates/organization/read_base.html:3
+#: ckan/templates/organization/read_base.html:6
+#: ckan/templates/package/base.html:14
+#: ckanext/agesic/templates/header.html:17
+msgid "Organizations"
+msgstr "Publicadores"
+
+#: ckan/controllers/group.py:306 ckan/controllers/home.py:62
+#: ckan/controllers/package.py:241 ckan/lib/helpers.py:834
+#: ckan/templates/group/base_form_page.html:6 ckan/templates/group/edit.html:4
+#: ckan/templates/group/edit_base.html:4
+#: ckan/templates/group/edit_base.html:10 ckan/templates/group/index.html:3
+#: ckan/templates/group/index.html:6 ckan/templates/group/index.html:18
+#: ckan/templates/group/members.html:3 ckan/templates/group/read_base.html:3
+#: ckan/templates/group/read_base.html:6 ckan/templates/header.html:105
+#: ckan/templates/package/group_list.html:5
+#: ckan/templates/package/read_base.html:20
+#: ckan/templates/revision/diff.html:16 ckan/templates/revision/read.html:84
+msgid "Groups"
+msgstr "Categorías"
+
+#: ckan/templates/package/read.html:20
+msgid "Share page"
+msgstr "Compartir"
+
+#: ckanext-agesic/templates/snippets/follow_button.html
+msgid "Follow data set"
+msgstr "Seguir Conjunto de Datos"
+
+msgid "users are following this Set"
+msgstr "usuarios siguen este Conjunto de Datos"
+
+#: ckan/controllers/group.py:460
+msgid "Unauthorized to create a group"
+msgstr "No estás autorizado para crear una categoría"
+
+#: ckan/controllers/group.py:614 ckan/controllers/group.py:629
+#, python-format
+msgid "Unauthorized to delete group %s"
+msgstr "No estás autorizado para borrar la categoría %s"
+
+#: ckan/controllers/group.py:620
+msgid "Organization has been deleted."
+msgstr "El publicador ha sido borrado."
+
+#: ckan/controllers/group.py:622
+msgid "Group has been deleted."
+msgstr "La categoría ha sido borrada."
+
+#: ckan/controllers/group.py:705
+#, python-format
+msgid "Unauthorized to add member to group %s"
+msgstr "No estás autorizado para agregar miembros a la categoría %s"
+
+#: ckan/controllers/group.py:724 ckan/controllers/group.py:737
+#, python-format
+msgid "Unauthorized to delete group %s members"
+msgstr "No estás autorizado a borrar %s miembros de la categoría"
+
+#: ckan/controllers/group.py:731
+msgid "Group member has been deleted."
+msgstr "Miembro de categoría ha sido borrado."
+
+#: ckan/controllers/group.py:779
+msgid "CKAN Group Revision History"
+msgstr "Historial de revisiones de la categoría"
+
+#: ckan/controllers/group.py:783
+msgid "Recent changes to CKAN Group: "
+msgstr "Cambios recientes en la categoría: "
+
+#: ckan/lib/activity_streams.py:63
+msgid "{actor} updated the group {group}"
+msgstr "{actor} actualizó la categoría {group}"
+
+#: ckan/lib/activity_streams.py:66
+msgid "{actor} updated the organization {organization}"
+msgstr "{actor} actualizó el publicador {organization}"
+
+#: ckan/lib/activity_streams.py:81
+msgid "{actor} deleted the group {group}"
+msgstr "{actor} borró la categoría {group}"
+
+#: ckan/lib/activity_streams.py:84
+msgid "{actor} deleted the organization {organization}"
+msgstr "{actor} borró el publicador {organization}"
+
+#: ckan/lib/activity_streams.py:97
+msgid "{actor} created the group {group}"
+msgstr "{actor} creó la categoría {group}"
+
+#: ckan/lib/activity_streams.py:100
+msgid "{actor} created the organization {organization}"
+msgstr "{actor} creó el publicador {organization}"
+
+#: ckan/lib/mailer.py:127 ckan/templates/home/snippets/stats.html:17
+msgid "organization"
+msgstr "publicador"
+
+#: ckan/lib/mailer.py:128 ckan/templates/home/snippets/stats.html:23
+msgid "group"
+msgstr "categoría"
+
+#: ckan/logic/validators.py:33 ckan/logic/validators.py:42
+msgid "An organization must be provided"
+msgstr "Se debe proporcionar un publicador"
+
+#: ckan/logic/validators.py:47
+msgid "Organization does not exist"
+msgstr "Publicador no existe"
+
+#: ckan/logic/validators.py:52
+msgid "You cannot add a dataset to this organization"
+msgstr "No es posible agregar un conjunto de datos a este publicador"
+
+#: ckan/logic/validators.py:254
+msgid "That group name or ID does not exist."
+msgstr "Nombre o identificador de categoría desconocido."
+
+#: ckan/logic/validators.py:410
+msgid "Group name already exists in database"
+msgstr "Este nombre de categoría ya existe en la base de datos"
+
+#: ckan/logic/validators.py:741
+msgid "Datasets with no organization can't be private."
+msgstr "Los conjuntos de datos sin publicador no pueden ser privados."
+
+#: ckan/logic/action/create.py:804
+msgid "Trying to create an organization as a group"
+msgstr "Intentando crear un publicador como una categoría"
+
+#: ckan/logic/action/create.py:1477 ckan/logic/action/create.py:1485
+msgid "You must be logged in to follow a group."
+msgstr "Debe haber iniciado sesión para seguir a una categoría."
+
+#: ckan/logic/action/update.py:1059
+msgid "Organization was not found."
+msgstr "Publicador no encontrado."
+
+#: ckan/logic/auth/create.py:31 ckan/logic/auth/update.py:45
+#, python-format
+msgid "User %s not authorized to edit these groups"
+msgstr "El usuario %s no está autorizado para editar estas categorías"
+
+#: ckan/logic/auth/create.py:38
+#, python-format
+msgid "User %s not authorized to add dataset to this organization"
+msgstr ""
+"El usuario %s no está autorizado para crear conjuntos de datos en este "
+"publicador"
+
+#: ckan/logic/auth/create.py:119
+#, python-format
+msgid "User %s not authorized to create groups"
+msgstr "El usuario %s no está autorizado para crear categorías"
+
+#: ckan/logic/auth/create.py:129
+#, python-format
+msgid "User %s not authorized to create organizations"
+msgstr "El usuario %s no está autorizado para crear publicadores"
+
+#: ckan/logic/auth/create.py:189
+msgid "Group was not found."
+msgstr "No se ha encontrado la categoría."
+
+#: ckan/logic/auth/create.py:217
+msgid "Valid API key needed to create a group"
+msgstr "Es necesaria una clave de API válida para crear una categoría"
+
+#: ckan/logic/auth/create.py:261 ckan/logic/auth/update.py:115
+#, python-format
+msgid "User %s not authorized to edit group %s"
+msgstr "El usuario %s no está autorizado para editar la categoría %s"
+
+#: ckan/logic/auth/delete.py:82
+#, python-format
+msgid "User %s not authorized to delete groups"
+msgstr "El usuario %s no está autorizado para eliminar categorías"
+
+#: ckan/logic/auth/delete.py:86
+#, python-format
+msgid "User %s not authorized to delete group %s"
+msgstr "El usuario %s no está autorizado para borrar la categoría %s"
+
+#: ckan/logic/auth/delete.py:103
+#, python-format
+msgid "User %s not authorized to delete organizations"
+msgstr "El usuario %s no está autorizado para eliminar publicadores"
+
+#: ckan/logic/auth/delete.py:107
+#, python-format
+msgid "User %s not authorized to delete organization %s"
+msgstr "El usuario %s no está autorizado para eliminar el publicador %s"
+
+#: ckan/logic/auth/update.py:128
+#, python-format
+msgid "User %s not authorized to edit organization %s"
+msgstr "El usuario %s no está autorizado para editar el publicador %s"
+
+#: ckan/logic/auth/update.py:145
+#, python-format
+msgid "User %s not authorized to change state of group %s"
+msgstr "El usuario %s no está autorizado para cambiar el estado de la categoría %s"
+
+#: ckan/logic/auth/update.py:162
+#, python-format
+msgid "User %s not authorized to edit permissions of group %s"
+msgstr ""
+"El usuario %s no está autorizado para editar los permisos de la categoría %s"
+
+#: ckan/logic/auth/update.py:272
+msgid "Valid API key needed to edit a group"
+msgstr "Es necesaria una clave de API válida para editar una categoría"
+
+#: ckan/templates/footer.html:9
+msgid "Terms of use"
+msgstr "Términos de uso"
+
+#: ckan/templates/group/about.html:11
+#: ckan/templates/group/snippets/info.html:15
+#: ckan/templates/snippets/group.html:24
+#: ckan/templates/snippets/group_item.html:18
+msgid "There is no description for this group"
+msgstr "No existe una descripción para esta categoría"
+
+#: ckanext/agesic/templates/snippets/most_recent.html:6
+msgid "Most recent updates"
+msgstr "Actualizaciones más recientes"
+
+#: ckan/templates/group/base_form_page.html:7
+msgid "Add a Group"
+msgstr "Añadir una categoría"
+
+#: ckan/templates/group/base_form_page.html:11
+msgid "Group Form"
+msgstr "Formulario de Categoría"
+
+#: ckan/templates/group/confirm_delete.html:11
+msgid "Are you sure you want to delete group - {name}?"
+msgstr "¿Está seguro de que desea eliminar la categoría - {name}?"
+
+#: ckan/templates/group/edit.html:12
+msgid "Edit Group"
+msgstr "Editar Categoría"
+
+#: ckan/templates/group/index.html:13
+#: ckan/templates/user/dashboard_groups.html:7
+msgid "Add Group"
+msgstr "Añadir categoría"
+
+#: ckan/templates/group/index.html:20
+msgid "Search groups..."
+msgstr "Buscar categorías..."
+
+#: ckan/templates/group/index.html:29
+msgid "There are currently no groups for this site"
+msgstr "No existen actualmente categorías para este sitio"
+
+#: ckan/templates/group/member_new.html:80
+msgid ""
+" <p><strong>Admin:</strong> Can edit group information, as well as manage "
+"organization members.</p> <p><strong>Member:</strong> Can add/remove "
+"datasets from groups</p> "
+msgstr ""
+"<p><strong>Administrador:</strong>Puede editar información de la categoría, así "
+"como también administrar miembros del "
+"publicador.</p><p><strong>Miembro:</strong> Puede agregar/eliminar "
+"conjuntos de datos de las categorías.</p>"
+
+#: ckan/templates/group/new.html:3 ckan/templates/group/new.html:5
+#: ckan/templates/group/new.html:7
+msgid "Create a Group"
+msgstr "Crear una Categoría"
+
+#: ckan/templates/group/new_group_form.html:17
+msgid "Update Group"
+msgstr "Actualizar Categoría"
+
+#: ckan/templates/group/new_group_form.html:19
+msgid "Create Group"
+msgstr "Crear Categoría"
+
+#: ckan/templates/group/snippets/feeds.html:3
+msgid "Datasets in group: {group}"
+msgstr "Conjuntos de datos en la categoría: {group}"
+
+#: ckan/templates/group/snippets/group_form.html:10
+msgid "My Group"
+msgstr "Mi Categoría"
+
+#: ckan/templates/group/snippets/group_form.html:18
+msgid "my-group"
+msgstr "mi-categoria"
+
+#: ckan/templates/group/snippets/group_form.html:20
+msgid "A little information about my group..."
+msgstr "Un poco de información acerca de mi categoría..."
+
+#: ckan/templates/group/snippets/group_form.html:60
+msgid "Are you sure you want to delete this Group?"
+msgstr "¿Está seguro de que desea eliminar esta categoría?"
+
+#: ckan/templates/group/snippets/group_form.html:63
+msgid "Save Group"
+msgstr "Guardar categoría"
+
+#: ckan/templates/group/snippets/group_item.html:43
+msgid "Remove dataset from this group"
+msgstr "Borrar el conjunto de datos de esta categoría"
+
+#: ckan/templates/group/snippets/helper.html:4
+msgid "What are Groups?"
+msgstr "¿Qué son las categorías?"
+
+#: ckan/templates/group/snippets/helper.html:8
+msgid ""
+" You can use CKAN Groups to create and manage collections of datasets. This "
+"could be to catalogue datasets for a particular project or team, or on a "
+"particular theme, or as a very simple way to help people find and search "
+"your own published datasets. "
+msgstr ""
+"Puedes usar las categorías de CKAN para crear y administrar colecciones de "
+"conjuntos de datos. Esto se puede usar para catalogar conjuntos de datos de "
+"un proyecto concreto o un equipo, o de un tema en particular, o como una "
+"manera muy sencilla de ayudar a la gente a buscar y encontrar sus propios "
+"conjuntos de datos publicados."
+
+
+#: ckanext/showcase/templates/showcase/search.html:33
+msgid "Search showcases..."
+msgstr "Buscar aplicaciones..."
+
+#: ckanext/agesic/templates/home/layout1.html:22
+msgid "Applications"
+msgstr "Aplicaciones"
+
+#: ckanext/agesic/templates/home/index.html:14
+msgid "Add and share your own applications using open data"
+msgstr "Añada sus propias aplicaciones con datos abiertos para compartirlas con otros"
+
+#: ckanext/agesic/templates/home/index.html:15
+msgid "Add application"
+msgstr "Agregar aplicación"
+
+#: ckanext/agesic/templates/home/index.html:16
+msgid "Show applications"
+msgstr "Ver aplicaciones"
+
+#: ckan/templates/home/snippets/stats.html:17
+msgid "organizations"
+msgstr "Publicadores"
+
+#: ckan/templates/home/snippets/stats.html:23
+msgid "groups"
+msgstr "categorías"
+
+#: ckan/templates/organization/base_form_page.html:5
+msgid "Organization Form"
+msgstr "Formulario del publicador"
+
+#: ckan/templates/organization/bulk_process.html:88
+msgid "This organization has no datasets associated to it"
+msgstr "Este publicador no tiene conjuntos de datos asociados"
+
+#: ckan/templates/organization/confirm_delete.html:11
+msgid "Are you sure you want to delete organization - {name}?"
+msgstr "¿Está seguro de que desea eliminar el publicador - {name}?"
+
+#: ckan/templates/organization/edit.html:6
+#: ckan/templates/organization/snippets/info.html:13
+#: ckan/templates/organization/snippets/info.html:16
+msgid "Edit Organization"
+msgstr "Editar publicador"
+
+#: ckan/templates/organization/index.html:13
+#: ckan/templates/user/dashboard_organizations.html:7
+msgid "Add Organization"
+msgstr "Agregar publicador"
+
+#: ckan/templates/organization/index.html:20
+msgid "Search organizations..."
+msgstr "Buscar publicadores"
+
+#: ckan/templates/organization/index.html:29
+msgid "There are currently no organizations for this site"
+msgstr "Actualmente no existen publicadores para este sitio"
+
+#: ckan/templates/organization/member_new.html:81
+msgid ""
+" <p><strong>Admin:</strong> Can add/edit and delete datasets, as well as "
+"manage organization members.</p> <p><strong>Editor:</strong> Can add and "
+"edit datasets, but not manage organization members.</p> "
+"<p><strong>Member:</strong> Can view the organization's private datasets, "
+"but not add new datasets.</p> "
+msgstr ""
+"<p><strong>Administrador:</strong> Puede agregar/editar y eliminar conjuntos"
+" de datos, así como también administrar a los miembros de un "
+"publicador.</p> <p><strong>Editor:</strong> Puede agregar y editar "
+"conjuntos de datos, pero no administrar a los miembros de un "
+"publicador.</p> <p><strong>Miembro:</strong> Puede ver los conjuntos de "
+"datos privados de un publicador, pero no agregar nuevos conjuntos de "
+"datos.</p>"
+
+#: ckan/templates/organization/new.html:3
+#: ckan/templates/organization/new.html:5
+#: ckan/templates/organization/new.html:7
+#: ckan/templates/organization/new.html:12
+msgid "Create an Organization"
+msgstr "Crear un publicador"
+
+#: ckan/templates/organization/new_organization_form.html:17
+msgid "Update Organization"
+msgstr "Actualizar publicador"
+
+#: ckan/templates/organization/new_organization_form.html:19
+msgid "Create Organization"
+msgstr "Crear publicador"
+
+#: ckan/templates/organization/snippets/help.html:4
+#: ckan/templates/organization/snippets/helper.html:4
+msgid "What are Organizations?"
+msgstr "¿Qué son los publicadores?"
+
+#: ckan/templates/organization/snippets/help.html:7
+msgid ""
+" <p>Organizations act like publishing departments for datasets (for example,"
+" the Department of Health). This means that datasets can be published by and"
+" belong to a department instead of an individual user.</p> <p>Within "
+"organizations, admins can assign roles and authorise its members, giving "
+"individual users the right to publish datasets from that particular "
+"organisation (e.g. Office of National Statistics).</p> "
+msgstr ""
+"<p>Los publicador actúan como departamentos de publicación para los "
+"conjuntos de datos (por ejemplo, el Departamento de Salud). Esto significa "
+"que los conjuntos de datos pueden ser publicados por y pertenecer a un "
+"departamento en vez de a un usuario individual.</p> <p>Dentro de los "
+"publicadores, los administradores asignan roles y autorizaciones para sus "
+"miembros, dándoles a los usuarios individuales el derecho a publicar "
+"conjuntos de datos de ese publicador en particular (ej: Instituto Nacional "
+"de Estadística).</p>"
+
+#: ckan/templates/organization/snippets/helper.html:8
+msgid ""
+" CKAN Organizations are used to create, manage and publish collections of "
+"datasets. Users can have different roles within an Organization, depending "
+"on their level of authorisation to create, edit and publish. "
+msgstr ""
+"Los publicadores en CKAN son usados para crear, gestionar y publicar "
+"colecciones de conjuntos de datos. Los usuarios pueden tener diferentes "
+"perfiles en un publicador, dependiente de su nivel de autorización para "
+"crear, editar y publicar"
+
+#: ckan/templates/organization/snippets/organization_form.html:10
+msgid "My Organization"
+msgstr "Mi Organismo"
+
+#: ckan/templates/organization/snippets/organization_form.html:18
+msgid "my-organization"
+msgstr "mi-organismo"
+
+#: ckan/templates/organization/snippets/organization_form.html:20
+msgid "A little information about my organization..."
+msgstr "Un poco de información acerca de mi publicador..."
+
+#: ckan/templates/organization/snippets/organization_form.html:60
+msgid ""
+"Are you sure you want to delete this Organization? This will delete all the "
+"public and private datasets belonging to this organization."
+msgstr ""
+"¿Estás seguro de que quieres borrar este publicador? Esto borrará los "
+"conjuntos de datos privados y públicos que pertenecen a él."
+
+#: ckan/templates/organization/snippets/organization_form.html:63
+msgid "Save Organization"
+msgstr "Guardar publicador"
+
+#: ckan/templates/package/group_list.html:14
+msgid "Associate this group with this dataset"
+msgstr "Asocia esta categoría con este conjunto de datos"
+
+#: ckan/templates/package/group_list.html:14
+msgid "Add to group"
+msgstr "Añadir a la categoría"
+
+#: ckan/templates/package/group_list.html:23
+msgid "There are no groups associated with this dataset"
+msgstr "No hay categorías asociadas a este conjunto de datos"
+
+#: ckanext/agesic/templates/package/snippets/additional_info.html:7
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:5
+msgid "Update Frequency"
+msgstr "Frecuencia de Actualización"
+
+msgid "update_frequency"
+msgstr "Frecuencia de Actualización"
+
+#: ckanext/agesic/templates/package/snippets/additional_info.html:13
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:15
+msgid "Spatial Ref. System"
+msgstr "Sistema de Referencia"
+
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:15
+msgid "eg. SIRGAS-ROU98"
+msgstr "ej. SIRGAS-ROU98"
+
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:16
+msgid "eg. Uruguay"
+msgstr "ej. Uruguay"
+
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:15
+msgid "eg. 2013"
+msgstr "ej. 2013"
+
+#: ckanext/agesic/templates/package/snippets/additional_info.html:19
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:16
+msgid "Spatial Coverage"
+msgstr "Cobertura Espacial"
+
+msgid "spatial_coverage"
+msgstr "Cobertura Espacial"
+
+#: ckanext/agesic/templates/package/snippets/additional_info.html:25
+#: ckanext/agesic/templates/package/snippets/package_basic_fields.html:17
+msgid "Temporal Coverage"
+msgstr "Cobertura Temporal"
+
+msgid "temporal_coverage"
+msgstr "Cobertura Temporal"
+
+msgid "Spatial Ref. System"
+msgstr "Sistema de Referencia"
+
+msgid "spatial_ref_system"
+msgstr "Sistema de Referencia"
+
+#: ckan/templates/package/snippets/cannot_create_package.html:10
+msgid "Before you can create a dataset you need to create an organization."
+msgstr "Antes de poder crear un conjunto de datos, necesitas crear un publicador."
+
+#: ckan/templates/package/snippets/cannot_create_package.html:13
+msgid "Create a new organization"
+msgstr "Crear un nuevo publicador"
+
+#: ckan/templates/package/snippets/cannot_create_package.html:18
+msgid "There are no organizations to which you can assign this dataset."
+msgstr ""
+"No hay publicadores a las que le puedas asignar este conjunto de datos."
+
+#: ckan/templates/package/snippets/cannot_create_package.html:19
+msgid ""
+"Ask a system administrator to create an organization before you can "
+"continue."
+msgstr ""
+"Pídele a un administrador del sistema para crear un publicador antes "
+"de continuar"
+
+#: ckan/templates/package/snippets/package_basic_fields.html:70
+#: ckan/templates/snippets/organization.html:23
+msgid "Organization"
+msgstr "Publicador"
+
+#: ckan/templates/package/snippets/package_basic_fields.html:74
+msgid "No organization"
+msgstr "Sin publicador"
+
+#: ckan/templates/snippets/search_result_text.html:21
+msgid "{number} group found for \"{query}\""
+msgid_plural "{number} groups found for \"{query}\""
+msgstr[0] "{number} categoría encontrada para \"{query}\""
+msgstr[1] "{number} categorías encontradas para \"{query}\""
+
+#: ckan/templates/snippets/search_result_text.html:22
+msgid "No groups found for \"{query}\""
+msgstr "Lo sentimos, no se encontraron categorías para \"{query}\""
+
+#: ckan/templates/snippets/search_result_text.html:23
+msgid "{number} group found"
+msgid_plural "{number} groups found"
+msgstr[0] "{number} categoría encontrada"
+msgstr[1] "{number} categorías encontradas"
+
+#: ckan/templates/snippets/search_result_text.html:24
+msgid "No groups found"
+msgstr "No se han encontrado categorías"
+
+#: ckan/templates/snippets/search_result_text.html:27
+msgid "{number} organization found for \"{query}\""
+msgid_plural "{number} organizations found for \"{query}\""
+msgstr[0] "{number} publicador encontrado para \"{query}\""
+msgstr[1] "{number} publicadores encontrados para \"{query}\""
+
+#: ckan/templates/snippets/search_result_text.html:28
+msgid "No organizations found for \"{query}\""
+msgstr "Lo sentimos, no se encontraron publicadores para \"{query}\""
+
+#: ckan/templates/snippets/search_result_text.html:29
+msgid "{number} organization found"
+msgid_plural "{number} organizations found"
+msgstr[0] "{number} publicador encontrado"
+msgstr[1] "{number} publicadores encontrados"
+
+#: ckanext/showcase/templates/showcase/snippets/showcase_search_result_text.html:29
+msgid "{number} showcase found"
+msgid_plural "{number} showcases found"
+msgstr[0] "{number} Aplicación encontrada"
+msgstr[1] "{number} Aplicaciones encontradas"
+
+#: ckan/templates/snippets/search_result_text.html:30
+msgid "No organizations found"
+msgstr "Lo sentimos, no se encontraron publicadores"
+
+#: ckan/templates/user/dashboard.html:21
+#: ckan/templates/user/dashboard_organizations.html:12
+msgid "My Organizations"
+msgstr "Mis publicadores"
+
+#: ckan/templates/user/dashboard.html:22
+#: ckan/templates/user/dashboard_groups.html:12
+msgid "My Groups"
+msgstr "Mis Categorías"
+
+#: ckan/templates/user/dashboard_groups.html:20
+msgid "You are not a member of any groups."
+msgstr "No eres miembro de ninguna de las categorías."
+
+#: ckan/templates/user/dashboard_organizations.html:21
+msgid "You are not a member of any organizations."
+msgstr "No eres miembro de ninguno de los publicadores."
+
+#: ckan/templates/user/new.html:28
+msgid "Create datasets, groups and other exciting things"
+msgstr "Crear conjuntos de datos, categorías y otras cosas interesantes"
+
+#: ckanext/agesic/templates/snippets/popular_groups.html:5
+msgid "Most popular groups"
+msgstr "Categorías más populares"
+
+#: ckanext/agesic/templates/snippets/popular_groups.html:16
+msgid "View all groups"
+msgstr "Ver todas las categorías"
+
+msgid "Type Override"
+msgstr "Redefinir Tipo"
+
+#: ckanext/agesic/templates/package/snippets/resource_data_dict.html:2
+msgid "Data Dictionary"
+msgstr "Diccionario de datos"
+
+#: ckanext/agesic/templates/package/snippets/resource_data_dict.html:23
+msgid "No description"
+msgstr "Sin descripción"
+
+#: ckanext/agesic/plugin.py:753
+msgid "Not defined"
+msgstr "Sin definir"
+
+#: ckanext/archiver/reports.py:239
+#: ckanext/archiver/templates/report/broken_links.html:4
+#: ckanext/archiver/templates/report/broken_links.html:15
+#: ckanext/archiver/templates/report/broken_links.html:35
+msgid "Broken links"
+msgstr "Enlaces rotos"
+
+#: ckanext/archiver/reports.py:240
+msgid "Dataset resource URLs that are found to result in errors when resolved."
+msgstr "URLs de recursos de conjuntos de datos que resultaron con errores al accederse."
+
+#: ckanext/archiver/tasks.py:409 ckanext/archiver/tasks.py:430
+#: ckanext/archiver/tasks.py:626
+#, python-format
+msgid "Content-length %s exceeds maximum allowed value %s"
+msgstr "Content-length %s excede el valor máximo permitido %s"
+
+#: ckanext/archiver/tasks.py:424
+#, python-format
+msgid "Server content contained an API error message: %s"
+msgstr "El contenido del servidor contiene un mensaje de error de la API: %s"
+
+#: ckanext/archiver/tasks.py:446
+#, python-format
+msgid "Content-length after streaming was %i"
+msgstr "Content-length después de la transmisión fue: %i"
+
+#: ckanext/archiver/tasks.py:502
+msgid "No value for ckanext-archiver.cache_url_root in config"
+msgstr "No existe un valor para ckanext-archiver.cache_utl_root en la configuración"
+
+#: ckanext/archiver/tasks.py:590
+#, python-format
+msgid "URL parsing failure: %s"
+msgstr "Error de parseo de la URL: %s"
+
+#: ckanext/archiver/tasks.py:595
+#, python-format
+msgid "Invalid url scheme. Please use one of: %s"
+msgstr "Esquema de URL no válido. Por favor use uno de: %s"
+
+#: ckanext/archiver/tasks.py:599
+msgid "URL parsing failure - did not find a host name"
+msgstr "Error de parseo de la URL - no se encontró el nombre del host"
+
+#: ckanext/archiver/tasks.py:722 ckanext/archiver/tasks.py:872
+#, python-format
+msgid "Connection error: %s"
+msgstr "Error de conexión: %s"
+
+#: ckanext/archiver/tasks.py:724 ckanext/archiver/tasks.py:874
+#, python-format
+msgid "Invalid HTTP response: %s"
+msgstr "Respuesta HTTP inválida: %s"
+
+#: ckanext/archiver/tasks.py:726 ckanext/archiver/tasks.py:876
+#, python-format
+msgid "Connection timed out after %ss"
+msgstr "La conexión ha excedido el tiempo después de %ss"
+
+#: ckanext/archiver/tasks.py:728 ckanext/archiver/tasks.py:878
+msgid "Too many redirects"
+msgstr "Demasiadas redirecciones"
+
+#: ckanext/archiver/tasks.py:730
+#, python-format
+msgid "Error downloading: %s"
+msgstr "Error descargando: %s"
+
+#: ckanext/archiver/tasks.py:734
+#, python-format
+msgid "Error with the download: %s"
+msgstr "Error con la descarga: %s"
+
+#: ckanext/archiver/tasks.py:867
+msgid "Invalid URL or Redirect Link"
+msgstr "URL no válida o enlace de redirección"
+
+#: ckanext/archiver/tasks.py:870
+msgid "Could not make HEAD request"
+msgstr "No se pudo hacer la solicitud HEAD"
+
+#: ckanext/archiver/tasks.py:880
+#, python-format
+msgid "Error during request: %s"
+msgstr "Error durante la solicitud: %s"
+
+#: ckanext/archiver/tasks.py:882
+#, python-format
+msgid "Error with the request: %s"
+msgstr "Error con la solicitud: %s"
+
+#: ckanext/archiver/tasks.py:889
+#, python-format
+msgid "Server returned HTTP error status: %s %s"
+msgstr "El servidor devolvió un error HTTP estado: %s %s"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:38
+msgid "Link is broken"
+msgstr "El enlace está roto"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:43
+msgid "This is a one-off failure"
+msgstr "Esta es una falla única"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:45
+#, python-format
+msgid ""
+"This resource has failed %(failure_count)s times in a row since it first "
+"failed: %(first_failure)s"
+msgstr ""
+"Este recurso ha fallado %(failure_count)s veces seguidas desde la primera "
+"vez que falló: %(first_failure)s"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:48
+#, python-format
+msgid "This resource was last ok: %(last_success)s"
+msgstr "Este recurso estuvo bien por última vez en: %(last_success)s"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:50
+#, python-format
+msgid ""
+"We do not have a past record of it working since the first check: "
+"%(created)s"
+msgstr ""
+"No tenemos un registro anterior de que funcione desde el primer "
+"control: %(created)s"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:53
+msgid "Link check is not conclusive"
+msgstr "La verificación del enlace no es concluyente"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:58
+msgid "Link is ok"
+msgstr "El enlace está bien"
+
+#: ckanext/archiver/templates/archiver/is_resource_broken.html:68
+#, python-format
+msgid "Link checked: %(updated)s"
+msgstr "Enlace verificado: %(updated)s"
+
+#: ckanext/archiver/templates/archiver/is_resource_cached.html:39
+msgid "Download cached copy"
+msgstr "Descargar copia en caché"
+
+#: ckanext/archiver/templates/archiver/is_resource_cached.html:41
+msgid "Size"
+msgstr "Tamaño"
+
+#: ckanext/archiver/templates/archiver/is_resource_cached.html:42
+msgid "Cached on"
+msgstr "En caché"
+
+#: ckanext/archiver/templates/archiver/is_resource_cached.html:44
+msgid "before it was broken"
+msgstr "antes de que se rompiera"
+
+#: ckanext/archiver/templates/archiver/is_resource_cached.html:47
+msgid "No cached copy available"
+msgstr "No hay copia en caché disponible"
+
+#: ckanext/archiver/templates/report/broken_links.html:3
+#: ckanext/archiver/templates/report/broken_links.html:14
+#: ckanext/archiver/templates/report/broken_links.html:34
+msgid "Broken datasets"
+msgstr "Conjuntos de datos rotos"
+
+#: ckanext/archiver/templates/report/broken_links.html:16
+msgid "% Broken links"
+msgstr "% Enlaces rotos"
+
+#: ckanext/archiver/templates/report/broken_links.html:45
+msgid "Index/position of the resource in the dataset"
+msgstr "Index/position del recurso en el conjunto de datos"
+
+#: ckanext/archiver/templates/report/broken_links.html:45
+msgid "Res"
+msgstr "Res"
+
+#: ckanext/archiver/templates/report/broken_links.html:48
+msgid "Reason"
+msgstr "Razón"
+
+#: ckanext/archiver/templates/report/broken_links.html:49
+msgid "Failed download attempts"
+msgstr "Intentos fallidos de descarga"
+
+#: ckanext/archiver/templates/report/broken_links.html:49
+msgid "No. of fails"
+msgstr "No. de falla"
+
+#: ckanext/archiver/templates/report/broken_links.html:50
+msgid "First failed attempt"
+msgstr "Primer intento fallido"
+
+#: ckanext/archiver/templates/report/broken_links.html:50
+msgid "First fail"
+msgstr "Primer falla"
+
+#: ckanext/archiver/templates/report/broken_links.html:51
+msgid "Most recent failed attempt"
+msgstr "Intento fallido más reciente"
+
+#: ckanext/archiver/templates/report/broken_links.html:51
+msgid "Latest fail"
+msgstr "El último error"
+
+#: ckanext/archiver/templates/report/broken_links.html:52
+msgid "The last time it was successfully obtained"
+msgstr "La última vez que se obtuvo con éxito"
+
+#: ckanext/archiver/templates/report/broken_links.html:52
+msgid "Last success"
+msgstr "Último éxito"
+
+#: ckanext/report/templates/report/index.html:3
+#: ckanext/report/templates/report/index.html:6
+#: ckanext/report/templates/report/view.html:3
+#: ckanext/report/templates/report/view.html:6
+msgid "Reports"
+msgstr "Reportes"
+
+#: ckanext/report/templates/report/index.html:26
+msgid "View Report"
+msgstr "Ver Reporte"
+
+#: ckanext/report/templates/report/option_include_sub_organizations.html:9
+msgid "Include results from sub-organizations"
+msgstr "Incluir resultados de suborganismos"
+
+#: ckanext/report/templates/report/option_organization.html:12
+#: ckanext/report/templates/report/option_organization.html:16
+msgid "Index of all organizations"
+msgstr "Índice de todos los publicadores"
+
+#: ckanext/report/templates/report/tagless-datasets.html:8
+msgid "Datasets without tags"
+msgstr "Conjuntos de datos sin etiquetas"
+
+#: ckanext/report/templates/report/tagless-datasets.html:9
+msgid "Average tags per package"
+msgstr "Promedio de etiquetas por conjunto de datos"
+
+#: ckanext/report/templates/report/tagless-datasets.html:16
+msgid "Notes"
+msgstr "Notas"
+
+#: ckanext/report/templates/report/view.html:14
+msgid "Generated"
+msgstr "Generado"
+
+#: ckanext/report/templates/report/view.html:18
+msgid "Refresh report"
+msgstr "Actualizar reporte"
+
+#: ckanext/report/templates/report/view.html:21
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: ckanext/report/templates/report/view.html:23
+msgid ""
+"As a system administrator you are able to refresh this report on demand "
+"by clicking the 'Refresh' button."
+msgstr ""
+"Como administrador del sistema usted puede actualizar este reporte a demanda "
+"clickeando en el botón 'Actualizar'."
+
+#: ckanext/report/templates/report/view.html:29
+msgid "Options"
+msgstr "Opciones"
+
+#: ckanext/report/templates/report/view.html:50
+msgid "Results"
+msgstr "Resultados"
+
+#: ckanext/report/templates/report/view.html:52
+msgid "No results found."
+msgstr "No se encontraron resultados."
+
+msgid "Chart Type"
+msgstr "Tipo de gráfico"
+
+msgid "Color Pattern"
+msgstr "Patrón de colores"
+
+msgid "Legend"
+msgstr "Leyenda"
+
+msgid "Rotate axis"
+msgstr "Rotar ejes"
+
+msgid "Show data labels"
+msgstr "Mostrar etiquetas de datos"
+
+msgid "Show grid on x axis"
+msgstr "Mostrar cuadrícula en el eje X"
+
+msgid "Show grid on y axis"
+msgstr "Mostrar cuadrícula en el eje Y"
+
+msgid "Aggregate progress keys"
+msgstr "Añadir claves de progresión"
+
+msgid "Select the keys for the data that needs to be charted."
+msgstr "Seleccione las columnas que deben ser graficadas"
+
+msgid "Data keys"
+msgstr "Columnas"
+
+msgid "Remap"
+msgstr "Remapear"
+
+msgid "Append Unit"
+msgstr "Agregar unidad"
+
+msgid "Select the keys for the progression (x-axis) of the data values."
+msgstr "Seleccione las columnas para agrupamiento progresivo en eje x."
+
+msgid "Progress keys"
+msgstr "Columnas"
+
+msgid "SQL Query"
+msgstr "Consulta SQL"
+
+msgid "Graphic width"
+msgstr "Ancho del gráfico"
+
+msgid "Max value Y axis"
+msgstr "Valor máximo eje Y"
+
+msgid "Customize the look of the table chart."
+msgstr "Personalice el aspecto del cuadro de tabla."
+
+msgid "Header text"
+msgstr "Texto de cabecera"
+
+msgid "Number value"
+msgstr "Valor numérico"
+
+msgid "Group by"
+msgstr "Agrupar por"
+
+msgid "X Axis"
+msgstr "Eje X"
+
+msgid "Y Axis"
+msgstr "Eje Y"
+
+msgid "Show groups' legend"
+msgstr "Mostrar etiqueta de grupos"
+
+msgid "Orientation"
+msgstr "Orientación"
+
+msgid "Orientation"
+msgstr "Orientación"
+
+msgid "Fields"
+msgstr "Campos"
+
+msgid "GeoJSON Resource"
+msgstr "Recurso GeoJSON"
+
+msgid "GeoJSON Key Field"
+msgstr "Campo clave GeoJSON"
+
+msgid "Key"
+msgstr "Clave"
+
+msgid "Redirect to URL"
+msgstr "Redirigir a URL"
+
+msgid "If left blank, clicking on a region will update the filters on the same page"
+msgstr "Si se deja en blanco, al hacer clic en una región se actualizarán los filtros en la misma página."
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "numeric"
+msgstr "numérico"
+
+msgid "text"
+msgstr "texto"
+
+msgid "timestamp"
+msgstr "fecha-hora"
+
+#: ckanext/qa/tasks.py:332
+#, python-format
+msgid "Content of file appeared to be format \"CSV\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"CSV\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"N3\" which receives openness "
+"score: 5."
+msgstr "El contenido del archivo parece ser formato \"N3\" que recibe un "
+"nivel de apertura de: 5."
+
+msgid "Content of file appeared to be format \"SPARQL\" which receives openness "
+"score: 5."
+msgstr "El contenido del archivo parece ser formato \"SPARQL\" que recibe un "
+"nivel de apertura de: 5."
+
+msgid "Content of file appeared to be format \"RDF\" which receives openness "
+"score: 5."
+msgstr "El contenido del archivo parece ser formato \"RDF\" que recibe un "
+"nivel de apertura de: 5."
+
+msgid "Content of file appeared to be format \"TTL\" which receives openness "
+"score: 5."
+msgstr "El contenido del archivo parece ser formato \"TTL\" que recibe un "
+"nivel de apertura de: 5."
+
+msgid "Content of file appeared to be format \"WCS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"WCS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"NetCDF\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"NetCDF\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"JSON\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"JSON\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"TSV\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"TSV\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"WFS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"WFS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"KMZ\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"KMZ\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"QGIS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"QGIS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"ODS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"ODS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"ODB\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"ODB\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"ODF\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"ODF\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"ODG\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"ODG\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"WMS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"WMS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"WMTS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"WMTS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"SVG\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"SVG\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"JPEG\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"JPEG\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"Atom Feed\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"Atom Feed\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"XYZ\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"XYZ\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"PNG\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"PNG\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"RSS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"RSS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"GeoJSON\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"GeoJSON\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"IATI\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"IATI\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"ICS\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"ICS\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"MBD\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"MBD\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"ArcGIS Map Service\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"ArcGIS Map Service\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"BMP\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"BMP\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"TIFF\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"TIFF\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"XLSX\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"XLSX\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"GIF\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"GIF\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"E00\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"E00\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"MrSID\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"MrSID\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"ArcGIS Map Preview\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"ArcGIS Map Preview\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"MOP\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"MOP\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"dBase\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"dBase\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"SHP\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"SHP\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"Esri REST\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"Esri REST\" que recibe un "
+"nivel de apertura de: 2."
+
+msgid "Content of file appeared to be format \"TXT\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"TXT\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"PPTX\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"PPTX\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"DOC\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"DOC\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"ArcGIS Online Map\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"ArcGIS Online Map\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"ZIP\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"ZIP\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"GZ\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"GZ\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"ODT\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"ODT\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"RAR\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"RAR\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"DCR\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"DCR\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"DOCX\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"DOCX\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"BIN\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"BIN\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"PPT\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"PPT\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"ODP\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"ODP\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"ODC\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"ODC\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"MXD\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"MXD\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"TAR\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"TAR\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"XML\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"XML\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"PDF\" which receives openness "
+"score: 1."
+msgstr "El contenido del archivo parece ser formato \"PDF\" que recibe un "
+"nivel de apertura de: 1."
+
+msgid "Content of file appeared to be format \"KML\" which receives openness "
+"score: 3."
+msgstr "El contenido del archivo parece ser formato \"KML\" que recibe un "
+"nivel de apertura de: 3."
+
+msgid "Content of file appeared to be format \"EXE\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"EXE\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"JS\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"JS\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"Perl\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"Perl\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"OWL\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"OWL\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"XSLT\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"XSLT\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"HTML\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"HTML\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"RDFa\" which receives openness "
+"score: 0."
+msgstr "El contenido del archivo parece ser formato \"RDFa\" que recibe un "
+"nivel de apertura de: 0."
+
+msgid "Content of file appeared to be format \"XLS\" which receives openness "
+"score: 2."
+msgstr "El contenido del archivo parece ser formato \"XLS\" que recibe un "
+"nivel de apertura de: 2."
+
+#: ckanext/qa/templates/qa/openness_stars.html:23
+#: ckanext/qa/templates/snippets/organization.html:9
+msgid "Openness"
+msgstr "Nivel de apertura"
+
+#: ckanext/qa/templates/qa/openness_stars.html:25
+#: ckanext/qa/templates/qa/openness_stars_brief.html:23
+msgid "Checked"
+msgstr "Comprobado"
+
+#: ckanext/qa/templates/qa/openness_stars.html:27
+#: ckanext/qa/templates/qa/openness_stars_brief.html:26
+msgid "No openness information yet."
+msgstr "Sin información de apertura aún."
+
+#: ckanext/qa/templates/qa/stars.html:24
+msgid "{0} out of {1}"
+msgstr "{0} de {1}"
+
+#: ckanext/qa/templates/qa/stars_explained.html:7
+msgid "Linked data - data URIs and linked to other data (e.g. RDF)"
+msgstr "Datos vinculados - URIs de datos vinculados a otros datos (ej. RDF)"
+
+#: ckanext/qa/templates/qa/stars_explained.html:9
+msgid "Linkable data - served at URIs (e.g. RDF)"
+msgstr "Datos vinculados - expuestos como URIs (ej. RDF)"
+
+#: ckanext/qa/templates/qa/stars_explained.html:11
+msgid "Structured data in open format (e.g. CSV)"
+msgstr "Datos estructurados con formato abierto (ej. CSV)"
+
+#: ckanext/qa/templates/qa/stars_explained.html:13
+msgid "Structured data but proprietry format (e.g. Excel)"
+msgstr "Datos estructurados pero con formato propietario (ej. Excel)"
+
+#: ckanext/qa/templates/qa/stars_explained.html:15
+msgid "Unstructured data (e.g. PDF)"
+msgstr "Datos no estructurados (Ej. PDF)"
+
+#: ckanext/qa/templates/report/openness.html:3
+#: ckanext/qa/templates/report/openness.html:57
+msgid "Datasets given a score"
+msgstr "Conjuntos de datos puntuados"
+
+#: ckanext/qa/templates/report/openness.html:4
+#: ckanext/qa/templates/report/openness.html:58
+msgid "Score frequencies"
+msgstr "Frecuencia de puntajes"
+
+#: ckanext/qa/templates/report/openness.html:8
+#: ckanext/qa/templates/report/openness.html:29
+#: ckanext/qa/templates/report/openness.html:62
+msgid "Score TBC"
+msgstr "Puntaje TBC"
+
+#: ckanext/qa/templates/report/openness.html:10
+#: ckanext/qa/templates/report/openness.html:31
+#: ckanext/qa/templates/report/openness.html:64
+#: ckanext/qa/templates/report/openness.html:87
+msgid "Score"
+msgstr "Puntaje"
+
+#: ckanext/qa/templates/report/openness.html:33
+#: ckanext/qa/templates/report/openness.html:56
+msgid "Total stars"
+msgstr "Total de estrellas"
+
+#: ckanext/qa/templates/report/openness.html:34
+#: ckanext/qa/templates/report/openness.html:55
+msgid "Average score"
+msgstr "Puntaje promedio"
+
+msgid "Reason"
+msgstr "Reason"
+
+#: ckanext/qa/reports.py:164
+msgid "Openness (Five Stars)"
+msgstr "Nivel de apertura (5 estrellas)"
+
+#: ckanext/qa/reports.py:165
+msgid ""
+"Datasets graded on Tim Berners Lees' Five Stars of Openness - openly "
+"licensed, openly accessible, structured, open format, URIs for entities, "
+"linked."
+msgstr ""
+"Conjuntos de datos puntuados según el nivel de apertura de 5 "
+"estrellas de Tim Berners Lee' - licencia abierta, acceso abierto, "
+"formato abierto y estructurado, URIs de entidades y vínculos disponibles."
+
+msgid "Download error"
+msgstr "Error de descarga"
+
+msgid "URL invalid"
+msgstr "URL inválida"
+
+msgid "Useful links"
+msgstr "Links de utilidad"
+
+msgid "Access statistics"
+msgstr "Estadísticas de acceso"
+
+msgid "Broken links and openness stars reports"
+msgstr "Reportes de links rotos y niveles de apertura"
+
+msgid "Complete resource table including link health"
+msgstr "Tabla completa de recursos incluyendo salud de sus links"
+
+msgid "active"
+msgstr "Activo"
+
+msgid "agency_link"
+msgstr "Enlace de la agencia"
+
+msgid "category"
+msgstr "Categoría"
+
+msgid "image_url"
+msgstr "URL de la imagen"
+
+msgid "subtopic"
+msgstr "Subtema"
+
+msgid "outdated"
+msgstr "desactualizado"
+
+msgid "discontinued"
+msgstr "discontinuado"
+
+msgid "Back"
+msgstr "Volver"
+
+msgid "OID"
+msgstr "OID"
+
+#: ckan/templates/organization/read.html:5
+#: ckan/templates/package/search.html:16
+#: ckan/templates/user/dashboard_datasets.html:7
+msgid "Add Dataset"
+msgstr "Agregar"
+
+msgid "Find"
+msgstr "Buscar"
+
+msgid "Search datasets..."
+msgstr "Buscar en el Catálogo"
+
+msgid "There are no tags associated with this dataset"
+msgstr "No hay etiquetas asociadas a este conjunto de datos"
+
+msgid "Showcases and use of data"
+msgstr "Aplicaciones y uso de datos"
+
+msgid "Send feedback"
+msgstr "Reportar un problema"
+
+msgid "Add to groups"
+msgstr "Autorizar Categorías"
+
+msgid "Are you sure you want to add user to all groups?"
+msgstr "¿Estás seguro de que quieres autorizar al usuario a agregar categorías vía API?"
+
+msgid "Author email"
+msgstr "Email del Autor"
+
+msgid "Maintainer email"
+msgstr "Email del Mantenedor"
+
+#: ckan/logic/validators.py:254
+msgid "ID"
+msgstr "Identificador"
+
+msgid "Manage user"
+msgstr "Administrar usuario"
+
+msgid "News feed"
+msgstr "Mis actividades"
+
+msgid "Show Only Popular {facet_type}"
+msgstr "Mostrar solamente {facet_type} populares"
+
+msgid "Basic Grid"
+msgstr "Cuadrícula básica"
+
+msgid "Line Chart"
+msgstr "Gráfico de linea"
+
+msgid "Bar Chart"
+msgstr "Gráfico de barras"
+
+msgid "Pie Chart"
+msgstr "Gráfico circular"
+
+msgid "Map viewer"
+msgstr "Visor de mapa"
+
+msgid "Map viewer"
+msgstr "Visor de mapa"
+
+msgid "Map viewer (OpenLayers)"
+msgstr "Visor de mapa (OpenLayers)"
+
+#: ckan/public/base/javascript/modules/resource-view-reorder.js:41
+msgid "Reorder resource view"
+msgstr "Reordenar las vistas del recursos"
+
+#: ckanext-agesic/ckanext/agesic/templates/home/my_activities.html:20
+msgid "Show my Datasets"
+msgstr "Ver mi actividad"
+
+#: ckanext-agesic/ckanext/agesic/templates/home/resource_due_dates_list.html:21
+msgid "See my Data sets"
+msgstr "Ver mis Conjuntos de datos"
+
+#: ckanext-agesic/ckanext/agesic/templates/home/most_viewed_table.html:22
+msgid "See my most viewed datasets"
+msgstr "Ver Conjuntos de datos más vistos"

@@ -1,0 +1,13 @@
+{% ckan_extends %}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Acerca de') }}</h2>
+{% endblock %}
+
+{% block about %}
+  {{ super() }}
+
+  <br/>
+  <h2>Componentes:</h2>
+  {{ h.render_repos_info() }}
+{% endblock %}

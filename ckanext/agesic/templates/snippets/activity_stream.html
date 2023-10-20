@@ -1,0 +1,19 @@
+{% ckan_extends %}
+
+{% block activity_stream %}
+    <ul class="activity">
+  {% for activity in activity_stream %}
+    {%- snippet "snippets/activities/{}.html".format(
+      activity.activity_type.replace(' ', '_')
+      ), "snippets/changed_package.html",
+      activity=activity, can_show_activity_detail=false, ah={
+        'actor': actor,
+        'dataset': dataset,
+        'organization': organization,
+        'user': user,
+        'group': group,
+      }, id=id
+    -%}
+  {% endfor %}
+  </ul>
+{% endblock %}

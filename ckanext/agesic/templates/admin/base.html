@@ -1,0 +1,25 @@
+{% ckan_extends %}
+
+{% block subtitle %}{{ _('Administration') }}{% endblock %}
+
+{% block breadcrumb_content %}{% endblock %}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Administer CKAN') }}</h2>
+{% endblock %}
+
+{% block page_header %}
+  <header class="module-content">
+    {% if self.content_action() | trim %}
+      <div class="content_action">
+        {% block content_action %}{% endblock %}
+      </div>
+    {% endif %}
+    <ul class="nav nav-tabs">
+      {{ h.build_nav_icon('admin.index', _('Sysadmins'), icon='gavel') }}
+      {{ h.build_nav_icon('admin.config', _('Config'), icon='check-square-o') }}
+      {{ h.build_nav_icon('admin.trash', _('Trash'), icon='trash-o') }}
+      {{ h.build_extra_admin_nav() }}
+    </ul>
+  </header>
+{% endblock %}

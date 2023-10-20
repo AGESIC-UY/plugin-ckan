@@ -1,0 +1,34 @@
+<div class="Box-body">
+  {% if resources %}
+
+    <div class="Alert Alert--dialog Alert--warning">
+        <h4 class="Alert-title">Hay <strong> {{ resources|length }} </strong> enlaces rotos para corregir</h4>
+    <ol>
+      {% for res in resources %}
+      <li><a href="/dataset/{{ res.package_id }}/resource/{{ res.id }}"> {{ res.name }} </a></li>
+      {% endfor %}
+    </ol>
+    </div>
+  {% endif %}
+</div>
+
+
+<!--<div class="Box-body">-->
+<!--  {% if resources %}-->
+<!--    <div class="Alert Alert&#45;&#45;dialog Alert&#45;&#45;warning">-->
+<!--        <h4 class="Alert-title">Hay <strong>3</strong> enlaces rotos para corregir</h4>-->
+<!--    <ol>-->
+<!--      {% for res in resources %}-->
+<!--        <li><a href="/dataset/{{ res.package_id }}/resource/{{ res.id }}">Horarios de omnibus en líneas interdepartamentales</a></li>-->
+<!--      {% endfor %}-->
+<!--    </ol>-->
+<!--    </div>-->
+<!--  {% else %}-->
+<!--    <div class="Alert Alert&#45;&#45;dialog Alert&#45;&#45;warning">-->
+<!--      <div class="dialog-data u-py1 u-pr0">-->
+<!--        <h4 class="Alert-title">Hay <strong>&#45;&#45;</strong> enlaces rotos para corregir</h4>-->
+<!--        <a href="#">Ver enlaces rotos</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  {% endif %}-->
+<!--</div>-->

@@ -1,0 +1,104 @@
+{% extends "page.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+
+{%- block scripts %}
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  {% asset 'agesic/panel' %}
+{% endblock -%}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Estadísticas del catálogo') }}</h2>
+{% endblock %}
+
+{% block primary %}
+  <div class="container-fluid">
+    <br/>
+    <div class="Box Box--mf sombreado_secciones">
+    <div class="row">
+      <div class="col panel_title_chart">
+        <h3 class="graf_pas">Conjuntos de datos</h3>
+      </div>
+    </div>
+    <div class="row panel_bar_chart">
+      <div class="col-sm-3">
+        <div id="chart_dataset_table_div"></div>
+      </div>
+      <div class="col-sm-9">
+        <div id="chart_dataset_div"></div>
+      </div>
+    </div>
+    </div>
+    <div class="Box Box--mf sombreado_secciones">
+    <div class="row">
+      <div class="col panel_title_chart">
+        <h3 class="graf_pas">Recursos</h3>
+      </div>
+    </div>
+    <div class="row panel_bar_chart">
+      <div class="col-sm-3">
+        <div id="chart_resources_table_div"></div>
+      </div>
+      <div class="col-sm-9">
+        <div id="chart_resources_div"></div>
+      </div>
+    </div>
+    </div>
+    <div class="Box Box--mf sombreado_secciones">
+    <div class="row">
+      <div class="col panel_title_chart">
+        <h3 class="graf_pas">Aplicaciones</h3>
+      </div>
+    </div>
+    <div class="row panel_bar_chart">
+      <div class="col-sm-3">
+        <div id="chart_showcase_table_div"></div>
+      </div>
+      <div class="col-sm-9">
+        <div id="chart_showcase_div"></div>
+      </div>
+    </div>
+    </div>
+    <div class="Box Box--mf sombreado_secciones">
+    <div class="row">
+      <div class="col panel_title_chart">
+        <h3 class="graf_pas">Publicadores</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div id="chart_organization_table_total"></div>
+      </div>
+      <div class="col-sm-9">
+        <div id="chart_organization_table_div"></div>
+      </div>
+    </div>
+    </div>
+    <div class="Box Box--mf sombreado_secciones">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3 class="graf_pas">Extensiones</h3>
+          <div id="chart_resources_by_format_div"></div>
+        </div>
+        <div class="col-sm-4">
+          <h3 class="graf_pas">Recursos</h3>
+          <div id="chart_resources_by_url_div"></div>
+        </div>
+        <div class="col-sm-4">
+          <h3 class="graf_pas">Licencias</h3>
+          <div id="chart_resources_by_license_div"></div>
+        </div>
+      </div>
+    </div>
+    <div class="Box Box--mf sombreado_secciones">
+      <div class="row">
+        <div class="col">
+          <iframe class="iframe_graf" src="https://datastudio.google.com/embed/reporting/5e3d3c38-9110-4674-b5f9-26dd84bc990f/page/Ys52" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

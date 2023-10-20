@@ -1,0 +1,17 @@
+node {
+             
+    def imageStreamNameFrom = "ckan-dev/ckan-supervisor:DEV"
+
+   	echo "version a deployar ... ${imageStreamNameFrom}"
+   	echo "version a deployar desde ... ckan-supervisor"
+    
+    stage ('Promote to test') {
+          sh "oc tag ${imageStreamNameFrom} ckan-test/ckan-supervisor:BETA"
+    }
+
+  }
+  def version() {
+    def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+    matcher ? matcher[0][1] : null
+  }
+

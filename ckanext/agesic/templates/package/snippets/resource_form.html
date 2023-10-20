@@ -1,0 +1,112 @@
+{% ckan_extends %}
+
+{% block basic_fields %}
+
+  {% block basic_fields_url %}
+    {% set is_upload = (data.url_type == 'upload') %}
+    <span class="control-required" style="float: left;">*&nbsp;</span>
+    {{ form.image_upload(data, errors, field_url='url', field_upload='upload', field_clear='clear_upload',
+       is_upload_enabled=h.uploads_enabled(), is_url=data.url and not is_upload, is_upload=is_upload,
+       upload_label=_('Data'), url_label=_('URL'), placeholder=_('http://example.com/external-data.csv'), field_name='name') }}
+  {% endblock %}
+
+  {% block basic_fields_name %}
+    {{ form.input('name', id='field-name', label=_('Name'), placeholder=_('eg. January 2011 Gold Prices'), value=data.name, error=errors.name, classes=['control-full'], is_required=True) }}
+    <div class="form-group">
+    <div class="controls">
+    <div class="row">
+    <div class="col-md-12">
+    <span class="info-block info-inline">
+      <i class="fa fa-info-circle"></i>
+      El nombre del recurso no tiene por qué ser igual al nombre del archivo. Se debe identificarlo correctamente según su contenido.
+    </span>
+    </div>
+    </div>
+    </div>
+    </div>
+  {% endblock %}
+
+  {% block basic_fields_description %}
+    {{ form.markdown('description', id='field-description', label=_('Description'), placeholder=_('Some useful notes about the data'), value=data.description, error=errors.description, is_required=True) }}
+    <div class="form-group">
+    <div class="controls">
+    <div class="row">
+    <div class="col-md-12">
+    <span class="info-block info-inline">
+      <i class="fa fa-info-circle"></i>
+      Información detallada acerca de qué representan los datos para que puedan ser reutilizados fácilmente.
+    </span>
+    </div>
+    </div>
+    </div>
+    </div>
+  {% endblock %}
+
+  {% block basic_fields_format %}
+    {% set format_attrs = {'data-module': 'autocomplete', 'data-module-source': '/api/2/util/resource/format_autocomplete?incomplete=?'} %}
+    {% call form.input('format', id='field-format', label=_('Format'), placeholder=_('eg. CSV, XML or JSON'), value=data.format, error=errors.format, classes=['control-medium'], attrs=format_attrs, is_required=True) %}
+      <span class="info-block info-block-small">
+        <i class="fa fa-info-circle"></i>
+        Agregar el formato del recurso a cargar Ej. "CSV"
+      </span>
+    {% endcall %}
+  {% endblock %}
+
+  {{ form.select('update_frequency', label=_('Update Frequency'), options=[{'name': '-1', 'value': '-1', 'text': 'Publicación única'},{'name': '0', 'value': '0', 'text': 'Enlace externo'},{'name': '1', 'value': '1', 'text': 'Diario'},{'name': '7', 'value': '7', 'text': 'Semanal'},{'name': '15', 'value': '15', 'text': 'Quincenal'},{'name': '30', 'value': '30', 'text': 'Mensual'},{'name': '60', 'value': '60', 'text': 'Bimestral'},{'name': '90', 'value': '90', 'text': 'Trimestral'},{'name': '182', 'value': '182', 'text': 'Semestral'},{'name': '365', 'value': '365', 'text': 'Anual'},{'name': '1826', 'value': '1826', 'text': 'Quinquenal'}], selected=data.update_frequency, error=errors.update_frequency, is_required=True) }}
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    Es imprescindible para la publicación que se agregue una correcta frecuencia de actualización del recurso.
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  {{ form.input('spatial_ref_system', label=_('Spatial Ref. System'), placeholder=_('eg. SIRGAS-ROU98'), value=data.spatial_ref_system, error=errors.spatial_ref_system) }}
+
+  {{ form.input('spatial_coverage', label=_('Spatial Coverage'), placeholder=_('eg. Uruguay'), value=data.spatial_coverage, error=errors.spatial_coverage) }}
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    La cobertura espacial permite identificar claramente en qué lugar/es son válidos los datos.
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  {{ form.input('temporal_coverage', label=_('Temporal Coverage'), placeholder=_('eg. 2013'), value=data.temporal_coverage, error=errors.temporal_coverage) }}
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    La cobertura temporal identifica el periodo de cobertura del dato (para qué periodos es válido).
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+
+{% endblock %}
+
+{% block previous_button %}
+<button class="Button Button--primary" name="save" value="go-dataset" type="submit" onclick="return check_resource_fields_are_empty()">{{ _('Previous') }}</button>
+{% endblock %}
+{% block again_button %}
+<button class="Button Button--primary" name="save" value="again" type="submit" onclick="return check_resource_fields_are_empty()">{{ _('Save & add another') }}</button>
+{% endblock %}
+{% block save_button %}
+<button class="Button Button--primary" name="save" value="go-metadata" type="submit" onclick="return check_resource_fields_are_empty()">{% block save_button_text %}{{ _('Finish') }}{% endblock %}</button>
+{% endblock %}
+{% block add_button %}
+<button class="Button Button--primary" name="save" value="go-dataset-complete" type="submit" onclick="return check_resource_fields_are_empty()">{{ _('Add') }}</button>
+{% endblock %}

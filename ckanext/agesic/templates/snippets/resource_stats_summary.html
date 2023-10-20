@@ -1,0 +1,25 @@
+
+{% if allowed %}
+<table data-toggle="table" class="table table-condensed table-bordered table-striped table-hover">
+	<thead>
+		<tr>
+			<th>{{ _('Resource') }}</th>
+			<th data-sortable="true">{{ _('Downloads (last 14 days)') }}</th>
+			<th data-sortable="true">{{ _('Downloads (since recording started)') }}</th>
+			<th data-sortable="true">{{ _('Owner organization') }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for resource_url, descORformat, dataset_url, dataset_name, recent, ever, org in top_resources %}
+		<tr>
+			<td><a href="{{ resource_url }}">{{ descORformat }}</a><br/><em>{{ _('in') }} <a href="{{ dataset_url }}">{{ dataset_name }}</a></em></td>
+			<td>{{ recent }}</td>
+			<td>{{ ever }}</td>
+			<td>{{ org }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% else %}
+	<p>{{ _('Access statistics are enabled only for administrator users') }}</p>
+{% endif %}

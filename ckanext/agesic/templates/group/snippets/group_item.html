@@ -1,0 +1,41 @@
+{% ckan_extends %}
+
+{% block item %}
+    <li class="Media">
+        <div class="Media-image">
+            {% set truncate=truncate or 0 %}
+            {% set truncate_title = truncate_title or 0 %}
+            {% set title = group.title or group.name %}
+
+            <img  class="images-item" src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}"
+                 alt="{{ group.name }}">
+        </div>
+        <div class="Media-body">
+            <h2>
+                <a href="{{ h.url_for('group.read', id=group.name) }}">{{ group.title or group.name }}</a>
+            </h2>
+            <div>
+                {% if group.description %}
+                    {% if truncate == 0 %}
+                        {{ h.render_markdown(group.description)|urlize }}
+                    {% else %}
+                        {{ h.render_markdown(group.description, truncate)|urlize }}
+                    {% endif %}
+                {% endif %}
+            </div>
+            <p><strong>
+                {% if group.package_count %}
+                    {{ ungettext('{num} Dataset', '{num} Datasets', group.package_count).format(num=group.package_count) }}
+                {% elif group.package_count == 0 %}
+                    {{ _('0 Datasets') }}
+                {% endif %}
+            </strong></p>
+            <p>
+{#                <strong>{{ _("Last updated") }}:</strong> {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=group.created %}#}
+            </p>
+            {% if group.user_member %}
+                <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-sm media-edit" title="{{ _('Remove dataset from this group') }}"/>
+            {% endif %}
+        </div>
+    </li>
+{% endblock %}

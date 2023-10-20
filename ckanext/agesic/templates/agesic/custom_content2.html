@@ -1,0 +1,82 @@
+{% extends "page.html" %}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Preguntas frecuentes') }}</h2>
+{% endblock %}
+
+{% block primary %}
+  <div>
+    <div style="margin:50px;">
+      <h2>Preguntas frecuentes</h2><br />
+      <h3>1) ¿Qué son los datos abiertos?</h3>
+      <p>
+        Los datos abiertos son aquellos datos que pueden ser utilizados y distribuidos libremente por cualquier persona u organización, sin otra limitación que la atribución y la normativa nacional vigente. Esto significa que un dato abierto puede ser utilizado por todas las personas con cualquier objetivo, ya sea crear un emprendimiento, una investigación científica o periodística, nuevos servicios o mejorar los existentes, etc.
+        <br/>
+        Para que un dato sea considerado abierto, se debe disponibilizar en algún medio digital, cumplir con los ocho principios de datos abiertos (los datos deben ser completos, primarios, oportunos, accesibles, procesables por máquina, libres de licencias restrictivas, con acceso no discriminatorio y en formato no propietario) y tener asignada una licencia abierta.
+      </p>
+      <h3>2) ¿Qué diferencia hay entre datos públicos y datos abiertos?</h3>
+      <p>
+        Los datos públicos son aquellos que no están sujetos a restricciones de privacidad, seguridad o privilegio. Para que un dato público sea, además, abierto, se tiene que disponibilizar digitalmente bajo una licencia abierta y en formato abierto.
+        <br/>
+        Formato abierto es un formato cuya especificación está disponible públicamente y de manera gratuita y su uso no impone restricción de ningún tipo.
+      </p>
+      <h3>3) ¿Quién puede publicar en el catálogo?</h3>
+      <p>
+        Pueden publicar en el catálogo nacional de datos abiertos organismos públicos, gobiernos departamentales, academia, organizaciones de sociedad civil y el sector privado. Es un catálogo de alcance nacional.
+      </p>
+      <h3>4) ¿Cómo puedo disponer de un usuario en el catálogo de datos abiertos?</h3>
+      <p>
+        Para disponer de un usuario en el catálogo de datos abiertos, deben solicitarlo a través del correo <a href="mailto:catalogodatos@agesic.gub.uy">catalogodatos@agesic.gub.uy</a> indicando nombre, apellido, documento y correo electrónico, además de indicar que usuarios van a tener roles de  administradores y cuáles de usuarios van a tener rol de editor.
+      </p>
+      <h3>5) ¿Cuándo agrego conjuntos de datos en el catálogo, quedan públicos inmediatamente?</h3>
+      <p>
+        No. Al momento en que se publique un nuevo conjunto de datos, o que se actualice uno existente, el mismo aparecerá en visibilidad “privada”, ya que se evaluara por parte del equipo de Datos Abiertos si dicho conjunto de datos cumple con la calidad estipulada para la publicación de datos. Una vez validado todos los criterios indicados en la “lista de control de calidad” pasara a visibilidad pública. En caso de encontrar errores el equipo de Datos Abiertos se contactara vía correo electrónico con el publicador.
+      </p>
+      <h3>6) ¿A quién me dirijo si tengo una duda sobre la publicación?</h3>
+      <p>
+        Ante dudas acerca de la publicación de conjuntos de datos pueden comunicarse con el equipo de Datos Abiertos al correo <a href="mailto:catalogodatos@agesic.gub.uy">catalogodatos@agesic.gub.uy</a> o puede entrar al sitio web de Agesic donde encontrara guías y recomendaciones.<br>
+        Los organismos públicos podrán acceder a talleres de capacitación brindado por parte del equipo de Datos Abiertos.
+      </p>
+      <h3>7) ¿Existen guías de apoyo para los equipos técnicos?</h3>
+      <p>
+        Si, existen guías para la introducción a la apertura de datos, guías para buenas prácticas y existen guías para cumplir con el proceso de calidad.
+        <br/>
+        <a href="https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/comunicacion/publicaciones?field_tipo_de_publicacion_target_id=36&field_tematica_gubuy=366&field_fecha_by_year=All&field_fecha_by_month=All&field_publico_gubuy=All" target="_blank">
+          Para descargar las guías de apoyo técnico pueden ingresar al centro de recursos de Datos Abiertos
+        </a>
+      </p>
+      <h3>8) ¿Mi organización puede tener varios usuarios en la plataforma?</h3>
+      <p>
+        Si. No hay limitante en cuanto a la cantidad de usuarios que se puedan tener en la plataforma.
+      </p>
+      <h3>9) ¿Qué roles pueden tener los usuarios en el catálogo?</h3>
+      <p>
+        Existen tres roles que pueden tener los usuarios en el catálogo de datos, los cuales son:
+      </p>
+      <ul>
+        <li><strong>Administrador:</strong> Puede agregar/editar y eliminar conjuntos de datos, así como también administrar a los miembros de un publicador.</li>
+        <li><strong>Editor:</strong> Puede agregar y editar conjuntos de datos, pero no administrar a los miembros de un publicador.</li>
+        <li><strong>Miembro:</strong> Puede ver los conjuntos de datos privados de un publicador, pero no agregar nuevos conjuntos de datos.</li>
+      </ul>
+      <h3>10) ¿Qué tipo de Licencia se utiliza para publicar mis datos?</h3>
+      <p>
+        La licencia que se utiliza para publicar los datos abiertos en el catálogo es la “Licencia de DAG de Uruguay”. Dicha licencia está incluida en el Decreto Reglamentario del Art. 82 de la Ley N°19.355  y es obligatoria su adopción por todos los organismos del Estado que publiquen datos abiertos. Por otra parte, obliga a quienes reutilicen estos datos a citar al proveedor de los datos, hacer referencia a esta licencia y a los conjuntos de datos abiertos que están siendo utilizados.
+      </p>
+      <h3>11) ¿Cómo actualizo un conjunto de datos?</h3>
+      <p>
+        Para actualizar un conjunto de datos, se debe tener permiso de administrador o editor asociado al organismo correspondiente, e ingresar al conjunto de datos que se desea actualizar.  Una vez dentro, se puede modificar tanto la información adicional del conjunto de datos (léase Autor, Mantenedor, Frecuencia de Actualización, Licencia, entre otros) como también modificar los archivos de datos o metadatos que se cargaron al catálogo.
+      </p>
+      <h3>12) ¿Cómo elimino un conjunto de datos?</h3>
+      <p>
+        Para proceder a eliminar el conjunto seleccionado, se debe ingresar a administrar el conjunto, y al final de página existe una opción para eliminar el mismo .Únicamente pueden eliminar un conjunto de datos aquellos usuarios con el rol de administrador.
+      </p>
+      <h3>13) ¿En el catálogo solo se pueden publicar datos?</h3>
+      <p>
+        No, aparte de publicar conjuntos de datos, el catálogo también ofrece la posibilidad y el espacio para publicar aplicaciones desarrolladas por terceros que fueron realizadas utilizando los conjuntos de datos del catálogo.<br>
+        Existe la posibilidad de incorporar diferentes visualizaciones que permitirán una mejor comprensión de los datos publicados en el catálogo para todas las personas.
+      </p>
+
+      {{ h.talk_comments() }}
+    </div>
+  </div>
+{% endblock %}

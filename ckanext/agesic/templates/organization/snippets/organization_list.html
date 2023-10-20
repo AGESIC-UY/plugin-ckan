@@ -1,0 +1,7 @@
+<ul class="List List--media">
+    {% block organization_list_inner %}
+        {% for organization in organizations %}
+            {% snippet "organization/snippets/organization_item.html", organization=organization, position=loop.index, show_capacity=show_capacity %}
+        {% endfor %}
+    {% endblock %}
+</ul>

@@ -1,0 +1,113 @@
+  <table class="Table">
+    <thead>
+      <tr>
+        <th>{{ _('Field') }}</th>
+        <th>{{ _('Value') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% block package_additional_info %}
+        {% if pkg_dict.id %}
+          <tr>
+            <td>{{ _("ID") }}</td>
+            <td>{{ pkg_dict.id }}</td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.url %}
+          <tr>
+            <td>{{ _('Source') }}</td>
+            {% if h.is_url(pkg_dict.url) %}
+              <td class="dataset-details" property="foaf:homepage">{{ h.link_to(pkg_dict.url, pkg_dict.url, rel='foaf:homepage', target='_blank') }}</td>
+            {% else %}
+              <td class="dataset-details" property="foaf:homepage">{{ pkg_dict.url }}</td>
+            {% endif %}
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.author_email %}
+          <tr>
+            <td>{{ _("Author") }}</td>
+            <td property="dc:creator">{{ h.mail_to(email_address=pkg_dict.author_email, name=pkg_dict.author) }}</td>
+          </tr>
+        {% elif pkg_dict.author %}
+          <tr>
+            <td>{{ _("Author") }}</td>
+            <td property="dc:creator">{{ pkg_dict.author }}</td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.maintainer_email %}
+          <tr>
+            <td>{{ _('Maintainer') }}</td>
+            <td property="dc:contributor">{{ h.mail_to(email_address=pkg_dict.maintainer_email, name=pkg_dict.maintainer) }}</td>
+          </tr>
+        {% elif pkg_dict.maintainer %}
+          <tr>
+            <td>{{ _('Maintainer') }}</td>
+            <td property="dc:contributor">{{ pkg_dict.maintainer }}</td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.version %}
+          <tr>
+            <td>{{ _("Version") }}</td>
+            <td>{{ pkg_dict.version }}</td>
+          </tr>
+        {% endif %}
+
+        {% if h.check_access('package_update',{'id':pkg_dict.id}) %}
+          <tr>
+            <td>{{ _("State") }}</td>
+            <td>{{ _(pkg_dict.state) }}</td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.metadata_modified %}
+          <tr>
+            <td>{{ _("Last Updated") }}</td>
+            <td>
+                {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_modified %}
+            </td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.metadata_created %}
+          <tr>
+            <td>{{ _("Created") }}</td>
+            <td>
+                {% snippet 'snippets/local_friendly_datetime.html', datetime_obj=pkg_dict.metadata_created %}
+            </td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.license_title %}
+          <tr>
+              <td>{{ _("License") }}</td>
+              <td>
+                  {% if pkg_dict.license_url %}
+                      <a href="{{ pkg_dict.license_url }}">{{ pkg_dict.license_title }}</a>
+                  {% else %}
+                      {{ pkg_dict.license_title }}
+                  {% endif %}
+              </td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.update_frequency %}
+            <tr>
+                <td>{{ _("Update Frequency") }}</td>
+                <td>
+                    {% if pkg_dict.update_frequency %}
+                        {{ h.get_update_frequency_text(pkg_dict.update_frequency) }}
+                    {% else %}
+                        {{ h.package_update_frequency(pkg_dict.resources) }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endif %}
+
+      {% endblock %}
+    </tbody>
+  </table>
+

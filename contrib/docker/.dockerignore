@@ -1,0 +1,5 @@
+.git
+**/.git
+**/backup
+**/data
+**/pg_data

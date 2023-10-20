@@ -1,0 +1,102 @@
+{% ckan_extends %}
+
+{%- block page_header_title -%}{% endblock %}
+<div class="Page-body">
+    <div class="Page-document">
+        {% block primary_content_inner %}
+        {% block package_description %}
+        {% if pkg.private %}
+            <span class="dataset-private label label-inverse pull-right">
+            <i class="fa fa-lock"></i>
+                {{ _('Private') }}
+            </span>
+        {% endif %}
+        <span class="Page-subtitle">{{ pkg.organization.title or pkg.organization.name }}</span>
+        <div class="hidden_element">
+          <span class="hidden_element" id="org_name_a" type="hidden">{{ pkg.organization.title or pkg.organization.name }}</span>
+          <span class="hidden_element" id="id_org_a" type="hidden">{{ pkg.organization.id }}</span>
+          <span class="hidden_element" id="dat_name_a" type="hidden">{{ h.dataset_display_name(pkg) }}</span>
+          <span class="hidden_element" id="id_dat_a" type="hidden" >{{ pkg_dict.id }}</span>
+        </div>
+        <h2 class="Page-title">
+            {% block page_heading %}
+            {{ h.dataset_display_name(pkg) }}
+            {% if pkg.state.startswith('draft') %}
+            [{{ _('Draft') }}]
+            {% endif %}
+            {% if pkg.state == 'deleted' %}
+            [{{ _('Deleted') }}]
+            {% endif %}
+            {% endblock %}
+        </h2>
+        <div class="Page-info">
+            <div class="Bar">
+                <div class="Bar-cell">
+                    {% set num_followers = h.follow_count('dataset', pkg.id) %}
+                    <span class="u-h6 u-textNormal"><strong>{{ num_followers }}</strong> {{ _('users are following this Set') }}</span>
+                </div>
+
+                <div class="Bar-cell">
+                    <ul class="Page-actions">
+                        {% if not hide_follow_button %}
+                        <li>
+                            {{ h.follow_button('dataset', pkg.id) }}
+                        </li>
+                        <li>
+                            <div class="Dropdown" tabindex="0">
+                                <a class="Dropdown-trigger Button Button--small" tabindex="-1">
+                                    <span class="Icon Icon--share Icon--small"></span> Compartir
+                                </a>
+                                <div class="Dropdown-menu">
+                                    <div class="List">
+                                        <a class="List-item" href="https://www.facebook.com/sharer/sharer.php?u='URL'">Facebook</a>
+                                        <a class="List-item"
+                                           href="https://twitter.com/intent/tweet?text='TITULO'&amp;url='URL'">Twitter</a>
+                                        <a class="List-item" href="#">Instagram</a>
+                                        <a class="List-item" href="whatsapp://send?text='URL'">Whatsapp</a>
+                                        <a class="List-item" href="#">Copiar enlace</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block package_notes %}
+        {% if pkg.notes %}
+        <div class="notes embedded-content">
+            {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
+        </div>
+        {% endif %}
+        {% endblock %}
+        {# FIXME why is this here? seems wrong #}
+        <span class="insert-comment-thread"></span>
+        {% endblock %}
+
+        {% block package_additional_info %}
+        {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+        {% endblock %}
+
+        {% block package_tags %}
+        {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+        {% endblock %}
+
+        {% block package_resources %}
+        {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
+        {% endblock %}
+
+        {{ h.talk_comments() }}
+        {% endblock %}
+    </div>
+</div>
+
+{% block scripts %}
+  {{ super() }}
+  {% asset 'agesic/resource_health_and_status' %}
+  {% asset 'agesic/check_resource_health_and_status' %}
+  <script type="text/javascript">
+      ga('send', 'event', 'Dataset', 'organization', '{{ pkg.organization.name }}');
+  </script>
+{% endblock %}

@@ -1,0 +1,1 @@
+Invitación a {{ site_title }}

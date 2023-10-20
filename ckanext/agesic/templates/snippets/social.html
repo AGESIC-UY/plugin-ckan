@@ -1,0 +1,16 @@
+{% set current_url = h.full_current_url() %}
+{% block social %}
+            <div class="Page-actions Dropdown u-right" tabindex="0">
+                <div class="Dropdown-trigger Button Button--white Button--small">
+                    <span class="Icon Icon--share Icon--small"></span> Compartir esta página
+                </div>
+
+                <div class="Dropdown-menu">
+                    <div class="List">
+                        <a href="https://www.facebook.com/sharer.php?u={{ current_url }}" class="List-item">Facebook</a>
+                        <a href="https://twitter.com/share?url={{ current_url }}" class="List-item">Twitter</a>
+                        <a href="https://www.google.com/" class="List-item">Google +</a>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% if sentry_dsn %}
+    <script src="https://browser.sentry-cdn.com/5.4.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>
+      Sentry.init({
+        dsn: '{{ sentry_dsn }}',
+        beforeSend(event, hint) {
+          // Check if it is an exception, and if so, show the report dialog
+          if (event.exception) {
+            Sentry.showReportDialog({ eventId: event.event_id });
+          }
+          return event;
+        }
+      });
+      $(function() {
+        $('#feedback_button').click(function() {
+          var error = new Error('User Feedback Submitted');
+          Sentry.captureException(error);
+        });
+      });
+    </script>
+{% endif %}

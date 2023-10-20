@@ -1,0 +1,17 @@
+Estimado {{ user_name }},
+
+Usted ha sido invitado a {{ site_title }}.
+
+Ya se ha creado un usuario para usted con el nombre de usuario {{ user_name }}. Puedes cambiarlo más tarde.
+
+Has sido agregado a {{ group_type }} {{ group_title }} con el siguiente rol: {{ role_name }}.
+
+Para aceptar esta invitación, por favor restablezca su contraseña en:
+
+   {{ reset_link }}
+
+
+Que tenga un buen día.
+
+--
+Mensaje enviado por {{ site_title }} ({{ site_url }})

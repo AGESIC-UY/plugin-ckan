@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+
+{% block breadcrumb_share_social %}
+  <h2 class="Group-title UN-cabezal-title">{{ _('Ayúdanos a mejorar') }}</h2>
+{% endblock %}
+
+{% block primary %}
+  <div>
+    <div style="margin:50px;">
+      <h2>¡Ayúdanos a mejorar!</h2>
+      <p>
+        Está disponible una Nueva versión del Catalogo Nacional de Datos Abiertos, en la cual usuarios finales y publicadores podrán acceder a nuevas funcionalidades.
+      </p>
+      <p>
+        Con el fin de una mejor comprensión de los datos, los mismos fueron reorganizados y ordenados de una forma sencilla y accesible, podrás crear tus propias visualizaciones vinculadas a datos abiertos, acceder a un nuevo sistema de gestión de incidentes en el cual podrás visualizar tus datos y controlar la calidad de los mismos, y continuamos trabajando para su mejora continua.
+      </p>
+      <p>
+        Con este fin nos gustaría conocer tu opinión, sugerencias, ideas y/o aportaciones, valoramos todas y cada una de ellas, ya que nos permite seguir trabajando para ofrecer mejor servicios y contenidos.
+      </p>
+      <p>Envíanos tus comentarios a <a href="mailto:datosabiertos@agesic.gub.uy">datosabiertos@agesic.gub.uy</a>.</p>
+      <p>Equipo de Gobierno Abierto.</p>
+      {{ h.talk_comments() }}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% set truncate = 180 %}
+{% set truncate_title = 80 %}
+{% set title = package.title or package.name %}
+{% set notes = h.markdown_extract(package.notes, extract_length=truncate) %}
+
+{% block package_item %}
+  <li class="{{ item_class or "dataset-item" }}">
+    {% block content %}
+      <div class="dataset-content">
+        {% block heading %}
+          <h3 class="dataset-heading">
+            {% block heading_title %}
+              <a href="/agesic/resource_list/{{ group_name }}/{{ package.name }}">
+                  {{ h.truncate(title, truncate_title) }}
+              </a>
+            {% endblock %}
+          </h3>
+        {% endblock %}
+        {% block notes %}
+          {% if notes %}
+            <div>{{ notes|urlize }}</div>
+          {% else %}
+            <p class="empty">{{ _("This dataset has no description") }}</p>
+          {% endif %}
+        {% endblock %}
+      </div>
+      {% block resources %}
+        {% if package.resources and not hide_resources %}
+          {% block resources_outer %}
+            <ul class="dataset-resources unstyled">
+              {% block resources_inner %}
+                {% for resource in h.dict_list_reduce(package.resources, 'format') %}
+                <li>
+                  <a href="{{ h.url_for('resource_list', dataset_name=package.name, group_name=group_name) }}" class="label" data-format="{{ resource.lower() }}">{{ resource }}</a>
+                </li>
+                {% endfor %}
+              {% endblock %}
+            </ul>
+          {% endblock %}
+        {% endif %}
+      {% endblock %}
+    {% endblock %}
+  </li>
+{% endblock %}

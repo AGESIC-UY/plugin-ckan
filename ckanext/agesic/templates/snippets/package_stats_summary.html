@@ -1,0 +1,25 @@
+
+{% if allowed %}
+	<table data-toggle="table" class="table table-condensed table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>{{ _('Dataset') }}</th>
+				<th data-sortable="true">{{ _('Unique views (last 14 days)') }}</th>
+				<th data-sortable="true">{{ _('Unique views (since recording started)') }}</th>
+				<th data-sortable="true">{{ _('Owner organization') }}</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for name, pkt_url, org, recent, ever in top_packages %}
+		<tr>
+			<td><a href="{{ pkt_url }}">{{ name }}</a></td>
+			<td>{{ recent }}</td>
+			<td>{{ ever }}</td>
+			<td>{{ org }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+	<p>{{ _('Access statistics are enabled only for administrator users') }}</p>
+{% endif %}

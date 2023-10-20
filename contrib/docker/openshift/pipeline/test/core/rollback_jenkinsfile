@@ -1,0 +1,13 @@
+node {
+
+   	echo "rollback de ckan test"
+    
+    stage ('Promote to Test') {
+          sh "oc tag ckan-test/ckan-core:OLD ckan-test/ckan-core:BETA"
+    }
+
+  }
+  def version() {
+    def matcher = readFile('pom.xml') =~ '<version>(.+)</version>'
+    matcher ? matcher[0][1] : null
+  }

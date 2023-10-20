@@ -1,0 +1,62 @@
+{% extends "package/read_base.html" %}
+
+{% set truncate = 180 %}
+{% set truncate_title = 80 %}
+{% set title = pkg_dict.title or pkg_dict.name %}
+{% set notes = h.markdown_extract(pkg_dict.notes, extract_length=truncate) %}
+
+{% block custom_styles %}
+    <style>
+        .wrapper {background-image: unset;}
+        .primary {float: unset;}
+        .span9 {width: unset;}
+    </style>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block page_header %}{% endblock %}
+
+{% block breadcrumb_content %}{% endblock %}
+
+{% block secondary %}{% endblock %}
+
+{% block primary_content_inner %}
+    {{ super() }}
+    {% block package_description %}
+        {% block page_heading %}{% endblock %}
+        <h2>
+          {% block heading_title %}
+            {{ h.truncate(title, truncate_title) }}
+          {% endblock %}
+        </h2>
+    {% endblock %}
+
+    {% block package_additional_info %}
+        {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+    {% endblock %}
+
+    {% block more_info %}
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td>
+                <a href="{{ h.url_for(pkg_dict.type ~ '.read', id=pkg_dict.name) }}" target="_blank">
+                  {{ _('More details...') }}
+                </a>
+              </td>
+              <td align="right">
+                <a href="/agesic/package_list/{{ group_name }}">
+                  {{ _('Back') }}
+                </a>
+              </td>
+            </tr>
+            </tbody>
+        </table>
+    {% endblock %}
+
+{% endblock %}
+
+{% block page_pagination %}{% endblock %}
+
+{% block footer %}{% endblock %}

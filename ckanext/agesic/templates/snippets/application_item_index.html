@@ -1,0 +1,30 @@
+{% set type = showcase.type or 'showcase' %}
+{% set url = h.url_for(type ~ '_read', id=showcase.name) %}
+{% block item %}
+    <li class="Grid-item">
+        <a href="{{ url }}">
+            {% block item_inner %}
+                {% block image %}
+                    <div class="Flag">
+                        <div class="Flag-image">
+                        {% if showcase.extras.image_url %}
+                            <img class="u-circle" src="{% if showcase.extras.image_url[:4] != 'http' %}/uploads/showcase/{% endif %}{{ showcase.extras.image_url }}" alt="Ícono {{ h.get_translated(showcase, 'title') or showcase.display_name }}">
+                        {% else %}
+                            <img src="{{ h.url_for_static('/base/images/placeholder-group.png') }}" alt="Logo">
+                        {% endif %}
+                        </div>
+                        <div class="Flag-body">
+                            {% block title %}
+                                <span class="Box-title" data-element-id="headingsMap-24">{{ h.get_translated(showcase, 'title') or showcase.display_name }}</span>
+                            {% endblock %}
+                        </div>
+                    </div>
+                {% endblock %}
+                {% block link %}{% endblock %}
+                {% block notes %}
+<!--                    <p class="Box-text">{{ h.truncate(showcase.notes, 125) }}</p>-->
+                {% endblock %}
+            {% endblock %}
+        </a>
+    </li>
+{% endblock %}

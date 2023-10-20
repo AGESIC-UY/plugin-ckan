@@ -1,0 +1,11 @@
+agesic.egg-info
+dist
+build
+*.py[c~]
+*.swp
+*.dia~
+.idea
+ckanext/agesic/public/ga_geo.json
+ckanext/agesic/public/ga_hour.json
+contrib/docker/.env
+

@@ -1,0 +1,9 @@
+<div class="Box-header">
+  <h3 class="Box-name">Actividad</h3>
+</div>
+<div class="Box-body">
+  {% snippet 'snippets/activity_stream.html', activity_stream=activities %}
+</div>
+<div class="Box-footer">
+  <a href="/user/activity/{{ c.userobj.name }}" class="Box-more">{{ _('Show my Datasets') }}</a>
+</div>

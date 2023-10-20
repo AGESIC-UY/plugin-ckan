@@ -1,0 +1,21 @@
+{% block group_list %}
+
+  <div class="Box Box--mf Box--listadoAccesos Box--color2">
+    <div class="Box-header">
+      <h3 class="Box-name" data-element-id="headingsMap-2" data-headingsmap-highlight="true">Buscar por categoría</h3>
+    </div>
+    <div class="Box-body">
+      <ul class="Box-gridList Grid Grid--rowSize3">
+        {% block group_list_inner_index %}
+            {% for group in h.most_popular_groups() %}
+                {% snippet "snippets/group_item_index.html", group=group, position=loop.index %}
+            {% endfor %}
+        {% endblock %}
+      </ul>
+    </div>
+    <div class="Box-footer">
+      <a href="/group" class="Box-more">{{ _('View all groups') }}</a>
+    </div>
+  </div>
+
+{% endblock %}

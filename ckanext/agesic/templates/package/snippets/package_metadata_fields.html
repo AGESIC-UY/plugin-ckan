@@ -1,0 +1,83 @@
+{% ckan_extends %}
+
+{# Remove 'free extras' from the package form. If you're using
+convert_to/from_extras() as we are with our custom fieldbelow then
+you need to remove free extras from the form, or editing your custom fields
+won't work. #}
+
+{% block package_basic_fields_title %}
+    {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-full', 'control-large'], attrs={'data-module': 'slug-preview-target'}, is_required=True) }}
+{% endblock %}
+
+{% block package_metadata_fields_url %}
+  {{ form.input('url', label=_('Source'), id='field-url', placeholder=_('http://example.com/dataset.json'), value=data.url, error=errors.url, classes=['control-medium']) }}
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    URL al sitio de origen de los datos.
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}
+
+{% block package_metadata_fields_version %}
+  {{ form.input('version', label=_('Version'), id='field-version', placeholder=_('1.0'), value=data.version, error=errors.version, classes=['control-medium'], is_required=True) }}
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    Información acerca del contendido de la versión, se generan ante cambios en los recursos.
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}
+
+{% block package_metadata_author %}
+  {{ form.input('author', label=_('Author'), id='field-author', placeholder=_('Joe Bloggs'), value=data.author, error=errors.author, classes=['control-medium'], is_required=True) }}
+
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    Se debe considerar al área del organismo que se encarga de la publicación.
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  {{ form.input('author_email', label=_('Author Email'), id='field-author-email', placeholder=_('joe@example.com'), value=data.author_email, error=errors.author_email, classes=['control-medium'], is_required=True) }}
+{% endblock %}
+
+{% block package_metadata_fields_maintainer %}
+  {{ form.input('maintainer', label=_('Maintainer'), id='field-maintainer', placeholder=_('Joe Bloggs'), value=data.maintainer, error=errors.maintainer, classes=['control-medium'], is_required=True) }}
+
+  <div class="form-group">
+  <div class="controls">
+  <div class="row">
+  <div class="col-md-12">
+  <span class="info-block info-inline">
+    <i class="fa fa-info-circle"></i>
+    Hace referencia al equipo o persona que se encarga de mantener la publicación de los datos.
+  </span>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  {{ form.input('maintainer_email', label=_('Maintainer Email'), id='field-maintainer-email', placeholder=_('joe@example.com'), value=data.maintainer_email, error=errors.maintainer_email, classes=['control-medium'], is_required=True) }}
+{% endblock %}
+
+{% block custom_fields %}
+{% endblock %}

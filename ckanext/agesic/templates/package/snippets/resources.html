@@ -1,0 +1,67 @@
+{#
+Displays a sidebar module with navigation containing the provided resources.
+If no resources are provided then the module will not be displayed.
+
+pkg       - The package dict that owns the resources.
+active    - The id of the currently displayed resource.
+action    - The resource action to use (default: 'read', meaning route 'resource.read').
+is_activity_archive - Whether this is an old version of the resource (and therefore read-only)
+
+Example:
+
+  {% snippet "package/snippets/resources.html", pkg=pkg, active=res.id, is_activity_archive=False %}
+
+#}
+{% set resources = pkg.resources or [] %}
+{% if resources %}
+  {% block resources %}
+
+      <div class="Page-nav">
+      {% block resources_inner %}
+        {% block package_info_inner %}
+          {% block heading %}
+            <a class="Page-navTitle js-toggleLocalNav" href="{{ h.url_for('%s.read' % pkg.type, id=pkg.name) }}">{{ h.dataset_display_name(pkg) }}</a>
+          {% endblock %}
+        {% endblock %}
+        {% block resources_title %}{% endblock %}
+        {% block resources_list %}
+          {% set resource_class = '' %}
+          {% if selected_view == 'resource' %}
+            {% set resource_class="active" %}
+          {% endif %}
+
+              <ul class="Page-navList">
+                <li class="{{ resource_class }}">
+                    {% set pkg_resources_url = "#" %}
+                    {% if h.check_access('package_update', {'id':pkg.id }) %}
+                    {% set pkg_resources_url = h.url_for('%s.resources' % pkg.type, id=pkg.name) %}
+                    {% endif %}
+                  <a href="{{ pkg_resources_url }}">{{ _('Resources') }}</a>
+                  <ul class="Page-navSublist">
+                    {% for resource in resources %}
+                      {% set resource_class="" %}
+                      {% if resource.id == active %}
+                        {% set resource_class="active" %}
+                      {% endif %}
+                      <li class="{{ resource_class }}">
+                        <a href="{{ h.url_for('%s_resource.%s' % (pkg.type, 'read' if is_activity_archive else (action or 'read')),
+                        id=pkg.id if is_activity_archive else pkg.name, resource_id=resource.id, inner_span=true,
+                        **({'activity_id': request.args['activity_id']} if 'activity_id' in request.args else {})) }}"
+                           title="{{ h.resource_display_name(resource) }}">
+                            {{ h.resource_display_name(resource) | replace("_", " ") | truncate(70) }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              <li>{{ h.build_nav('showcase_blueprint.dataset_showcase_list', _('Showcases'), id=pkg.name) }}</li>
+              <li>{{ h.build_nav('dataset_groups', _('Groups'), id=pkg.name) }}</li>
+              <li>{{ h.build_nav('dataset_activity', _('Activity Stream'), id=pkg.name) }}</li>
+            </ul>
+
+        {% endblock %}
+      {% endblock %}
+      </div>
+
+  {% endblock %}
+{% endif %}
+

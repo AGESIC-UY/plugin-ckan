@@ -1,0 +1,19 @@
+{% extends "user/read.html" %}
+
+{% block subtitle %}{{ _('Organizations') }} {{ g.template_title_delimiter }} {{ super() }}{% endblock %}
+
+{% block primary_content_inner %}
+  <h2 class="hide-heading">{{ _('Organizations') }}</h2>
+  {% if organizations %}
+    <div class="wide">
+      {% snippet "organization/snippets/organization_list.html", organizations=organizations, show_capacity=True %}
+    </div>
+  {% else %}
+    <p class="empty">
+      {{ _('You are not a member of any organizations.') }}
+      {% if h.check_access('organization_create') %}
+        {% link_for _('Create one now?'), controller='organization', action='new' %}
+      {% endif %}
+    </p>
+  {% endif %}
+{% endblock %}

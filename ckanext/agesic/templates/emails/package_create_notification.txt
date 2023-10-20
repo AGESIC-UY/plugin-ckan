@@ -1,0 +1,9 @@
+Nuevo conjunto de datos creado:
+
+- Nombre conjunto: {{ title }}
+
+- Organismo publicador: {{ group_title }}
+
+- Usuario que publica: {{ creator_user_name }}
+
+- URL: {{ site_url }}/dataset/{{ name }}

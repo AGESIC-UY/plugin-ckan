@@ -1,0 +1,16 @@
+<p>Estimado usuario del Catálogo de Datos Abiertos,</p>
+<p>
+    Se ha detectado que el siguiente conjunto de datos "<a href="{{ pck_url }}">{{ pck.name }}</a>"
+    posee los siguientes recursos desactualizados:
+</p>
+<ul>
+    {% for name, url in resources %}
+        {# we cant get a good value for urls (without the download part, so not used until fixed) #}
+        <li>{{ name }}</li>
+    {% endfor %}
+</ul>
+<p>Le pedimos que actualice la información a la brevedad. Si se encuentra con algún inconveniente puede avisarnos al email: <a href="mailto:datosabiertos@agesic.gub.uy">datosabiertos@agesic.gub.uy</a></p>
+<p>
+Muchas gracias,<br/>
+Equipo de soporte del Catálogo de Datos Abiertos.-
+</p>

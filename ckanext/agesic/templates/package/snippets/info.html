@@ -1,0 +1,15 @@
+{#
+Displays a sidebar module with information for given package
+
+pkg    - The package dict that owns the resources.
+
+Example:
+
+  {% snippet "package/snippets/info.html", pkg=pkg %}
+
+#}
+{% block package_info %}
+  {% if pkg %}
+    {% snippet "package/snippets/resources.html", pkg=pkg, is_activity_archive=False %}
+  {% endif %}
+{% endblock %}
